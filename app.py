@@ -10,7 +10,7 @@ from src.preprocess import normalize,filter_customers
 from src.metrics import aggregate,comparisons,integrity,balance
 
 st.set_page_config(page_title='ExperimentIQ | Experiment Performance Intelligence',page_icon='🧪',layout='wide')
-st.markdown('<style>.block-container{max-width:1300px;padding-top:2rem}h1{letter-spacing:-1px}div[data-testid="stMetric"]{background:#f0f5fa;border-radius:12px;padding:16px}</style>',unsafe_allow_html=True)
+st.markdown('<style>.block-container{max-width:1300px;padding-top:2rem}h1{letter-spacing:-1px}div[data-testid="stMetric"]{background:#f0f5fa;border-radius:12px;padding:16px}div[data-testid="stMetricValue"]{font-size:1.65rem}</style>',unsafe_allow_html=True)
 @st.cache_data(show_spinner='Verifying original experiment data…')
 def load_data():
     path=retrieve(ROOT/'data/raw')
@@ -35,9 +35,10 @@ summary=aggregate(df)
 colors={'Control':'#61758a',"Men's email":'#176bba',"Women's email":'#16a394'}
 def chart(table,metric,title,percent=False):
     fig=px.bar(table,x='arm',y=metric,color='arm',color_discrete_map=colors,
-               hover_data=['n'],text_auto='.2%' if percent else '.3f',title=title,
+               hover_data=['n'],text_auto='.2%' if percent else (',d' if metric=='n' else '.3f'),title=title,
                labels={'arm':'Randomized arm',metric:title,'n':'Assigned customers'})
-    fig.update_layout(showlegend=False,height=340,margin=dict(l=12,r=12,t=55,b=20),paper_bgcolor='rgba(0,0,0,0)')
+    fig.update_layout(title_font_size=14,showlegend=False,height=340,margin=dict(l=12,r=12,t=55,b=20),paper_bgcolor='rgba(0,0,0,0)')
+    fig.update_yaxes(title=None)
     if percent: fig.update_yaxes(tickformat='.1%')
     st.plotly_chart(fig,width='stretch')
 def export(table,label,key):
@@ -45,12 +46,12 @@ def export(table,label,key):
 
 if page=='Executive Overview':
     a,b,c=st.columns(3)
-    a.metric('Randomized customers',f'{len(df):,}');b.metric('Experiment arms','3');c.metric('Observed spend (dollars)',f'${summary.total_spend.sum():,.2f}')
+    a.metric('Customers',f'{len(df):,}');b.metric('Experiment arms','3');c.metric('Observed spend ($)',f'${summary.total_spend.sum():,.2f}')
     st.caption('All customers assigned to each arm form the denominator, including zero spend and non-converters. Outcomes cover the two weeks following the campaign.')
     left,right=st.columns(2)
-    with left: chart(summary,'conversion_rate','Conversion rate · primary outcome',True)
-    with right: chart(summary,'visit_rate','Website visit rate · secondary outcome',True)
-    with left: chart(summary,'spend_per_customer','Average spend per assigned customer ($)')
+    with left: chart(summary,'conversion_rate','Conversion rate (primary)',True)
+    with right: chart(summary,'visit_rate','Website visit rate',True)
+    with left: chart(summary,'spend_per_customer','Spend per customer ($)')
     with right: chart(summary,'n','Assignment counts')
     st.dataframe(summary,width='stretch',hide_index=True)
     export(summary,'Download arm KPI summary','arm_kpis')
