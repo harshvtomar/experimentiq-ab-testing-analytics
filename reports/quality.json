@@ -1,0 +1,56 @@
+{
+  "rows": 64000,
+  "columns": [
+    "recency",
+    "history_segment",
+    "history",
+    "mens",
+    "womens",
+    "zip_code",
+    "newbie",
+    "channel",
+    "segment",
+    "visit",
+    "conversion",
+    "spend"
+  ],
+  "missing": {
+    "recency": 0,
+    "history_segment": 0,
+    "history": 0,
+    "mens": 0,
+    "womens": 0,
+    "zip_code": 0,
+    "newbie": 0,
+    "channel": 0,
+    "segment": 0,
+    "visit": 0,
+    "conversion": 0,
+    "spend": 0
+  },
+  "unexpected_categories": {
+    "segment": [],
+    "channel": [],
+    "zip_code": [],
+    "history_segment": []
+  },
+  "invalid_numeric_counts": {
+    "recency": 0,
+    "history": 0,
+    "mens": 0,
+    "womens": 0,
+    "newbie": 0,
+    "visit": 0,
+    "conversion": 0,
+    "spend": 0
+  },
+  "repeated_rows_after_first": 6562,
+  "duplicate_policy": "Retain all rows; no original customer identifier exists",
+  "cross_outcome_anomalies": {
+    "conversion_without_visit": 0,
+    "positive_spend_without_conversion": 0,
+    "conversion_without_positive_spend": 0
+  },
+  "errors": [],
+  "valid": true
+}

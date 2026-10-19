@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "metrics": [
+    "n",
+    "conversions",
+    "visits",
+    "spend_cents",
+    "conversion_rate",
+    "visit_rate",
+    "total_spend",
+    "spend_per_customer"
+  ],
+  "tolerance": 1e-12
+}

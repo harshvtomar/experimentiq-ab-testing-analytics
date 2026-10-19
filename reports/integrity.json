@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "Control": 21306,
+    "Men's email": 21307,
+    "Women's email": 21387
+  },
+  "expected_probabilities": [
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333
+  ],
+  "allocation_basis": "Original challenge states one third randomly selected for each arm",
+  "srm_chi_square": 0.20253125000000002,
+  "srm_df": 2,
+  "srm_p_value": 0.9036929575604195,
+  "srm_flag_at_0_001": false,
+  "interpretation": "Preliminary allocation diagnostic only; no outcome significance test"
+}
