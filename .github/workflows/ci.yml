@@ -24,6 +24,8 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Acquire and validate authentic data (failure is not a skip)
         run: python -m src.pipeline
+      - name: Reproduce statistical inference
+        run: python -m src.statistical_pipeline
       - run: python -m pytest -m integration -q
         env:
           EXPERIMENTIQ_REQUIRE_DATA: '1'

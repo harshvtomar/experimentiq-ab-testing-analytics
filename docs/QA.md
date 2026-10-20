@@ -22,3 +22,12 @@ Synthetic rows exist only in tests/conftest.py and never feed project findings. 
 - An initial download wait timed out; reconnected and used paired event/click operations to confirm completion. This was a browser automation recovery, not an application-code defect.
 - A standalone urllib request encountered Streamlit redirects; do not cite that request as HTTP-200 validation. Deployment acceptance is based on actual interactive browser rendering.
 - Final checkpoint adds docs/screenshots only; verify its own Actions run from the repository after publication. No additional application tests are claimed beyond the runs above.
+
+# Session 2 verification
+- Inspected remote main at `e3fb36be94ff74660525fbed9567a692ee0392ed`, all checkpoint documents and existing modules/SQL/tests before edits.
+- Runtime dependencies required reinstallation; first pytest invocation could not start (pytest absent). Restored pinned requirements. Existing pipeline completed and baseline suite passed: **23 passed in 6.35s**.
+- Retrospective plan committed separately before inferential calculations: `2397f9dfb0f227dbfda728b5a11b89b03b9c3b59`.
+- Initial inference unit suite: 18 passed; one precision warning from scipy Welch on a small constant synthetic arm. Implemented the algebraically equivalent Welch statistic/df directly and tested against scipy on a nondegenerate example; no change to the analysis plan.
+- `python -m src.statistical_pipeline`: completed on 64,000 authentic rows with 10,000 replications/arm. All three bootstrap endpoint drift ratios below 1.2% of CI width; bootstrap and analytic SEs agree within the tested 5% tolerance. Exact runtime/package/plan/source hashes in reports/session2/metadata.json.
+- `python -m pytest -q --junitxml=reports/test-results.xml`: **46 passed in 12.32s**, 0 failed, 0 skipped, no warnings. Includes prior tests; independent statsmodels CI/Holm references; known Fisher example; seed/empirical-bootstrap moment tests; heavy tails; all eight pages through AppTest; canonical table equality and real-data exports.
+- Session 2 publication, hosted CI and real-browser verification pending at implementation checkpoint; append verified results after deployment. No claim of public success yet.

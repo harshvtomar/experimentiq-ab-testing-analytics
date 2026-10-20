@@ -1,7 +1,7 @@
 # ExperimentIQ
 ### A/B Testing & Incremental Revenue Optimization
 
-A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Session 1 foundation**: descriptive results, data integrity, SQL verification and an interactive Streamlit MVP. Formal inference is reserved for Session 2.
+A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Session 2 delivered locally**: binary-outcome inference, declared Holm families, 10,000-replication customer bootstrap, exploratory subgroup interactions and eight interactive Streamlit pages. Hosted verification is recorded in docs/QA.md.
 
 ## Business question
 Which merchandise email, if any, should a retailer consider deploying to improve purchasing and revenue? Conversion is primary; website visits and two-week spend per assigned customer are secondary. All three experimental arms remain distinct.
@@ -13,7 +13,7 @@ Which merchandise email, if any, should a retailer consider deploying to improve
 |Men's email|21,307|267|1.2531%|18.2757%|$1.4226|
 |Women's email|21,387|189|0.8837%|15.1400%|$1.0772|
 
-Observed total spend: **$67,258.13**. Men's email minus control conversion difference: **0.6805 percentage points**; women's email minus control: **0.3111 percentage points**. These are descriptive differences, **not statistically established improvements or rollout recommendations**. Outcomes span two weeks following the campaign; this is historical evidence, not a present-day revenue forecast.
+Observed total spend: **$67,258.13**. Men's email minus control conversion difference: **0.6805 percentage points**; women's email minus control: **0.3111 percentage points**. These observed differences now have formal inference in [the statistical report](reports/session2/STATISTICAL_REPORT.md). They are not proof of profitable rollout. Outcomes span two weeks following the campaign; this is historical evidence, not a present-day revenue forecast.
 
 ## Reproduce (Python 3.12)
 ```bash
@@ -23,6 +23,7 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m src.pipeline
+python -m src.statistical_pipeline
 EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q
 python -m streamlit run app.py
 ```
@@ -33,7 +34,7 @@ Original CSV → checksum verification → schema/quality validation → separat
 
 - `src/`: retrieval, validation, preprocessing, metrics, SQLite and pipeline orchestration.
 - `sql/`: constrained schema, KPI view and 12 meaningful analyses.
-- `app.py`: Executive Overview, Treatment Comparison, Customer Segment Explorer, Data Quality & Methodology.
+- `app.py`: the four original pages plus Statistical Significance, Revenue Uplift Analysis, Segment Effect Explorer and Business Recommendations. Statistical rendering is isolated in `src/statistical_ui.py`.
 - `reports/`: computed aggregate KPIs, quality/provenance/SRM diagnostics, baseline balance and query exports.
 - `tests/`: deterministic synthetic unit fixtures and explicitly real-data integration/AppTest coverage.
 - `docs/`: business brief, source/license review, data dictionary, KPI contract, methodology and SQL guide.
@@ -65,4 +66,18 @@ All four pages were opened in a real browser. The Web-only filter returned 28,21
 
 ![Verified live executive overview](screenshots/executive-overview.png)
 
-Local tests: **23 passed, 0 failed, 0 skipped**. [Verified CI on the latest application-code commit](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651): both jobs passed. The final checkpoint changes documentation/screenshots only. See [QA evidence](docs/QA.md) and [Session 2 prompt](NEXT_SESSION_PROMPT.md).
+Session 1 tests: **23 passed, 0 failed, 0 skipped** (historical checkpoint). [Verified CI on the latest application-code commit](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651): both jobs passed. The final checkpoint changes documentation/screenshots only. See [QA evidence](docs/QA.md) and [Session 2 prompt](NEXT_SESSION_PROMPT.md).
+
+## Session 2 statistical results
+The retrospective analysis plan was committed as `2397f9dfb0f227dbfda728b5a11b89b03b9c3b59` before Session 2 inference. It is not preregistration: descriptive outcomes were already known.
+
+|Contrast|Conversion difference, pp (95% pointwise CI)|Primary Holm p|Revenue/customer difference (95% bootstrap CI)|
+|---|---|---:|---|
+|Men’s email − control|+0.6805 [0.5014, 0.8641]|2.3349e-13|+$0.7698 [$0.4888, $1.0573]|
+|Women’s email − control|+0.3111 [0.1502, 0.4745]|0.000165|+$0.4244 [$0.1690, $0.6810]|
+
+Binary tests: two-sided Fisher; risk-difference intervals: Newcombe/Wilson. Each secondary endpoint has its own two-contrast Holm family; three email-versus-email outcomes form an exploratory family. CIs are pointwise, not multiplicity-adjusted. Revenue p-values use a separate approximate Welch test, not bootstrap sign counts. All nine outcome/contrast results, raw/adjusted p-values, relative-effect intervals, sample sizes and assumptions are exported.
+
+No planned interaction remains significant after Holm across 12 tests; do not infer validated subgroup targets. These historical assignment effects support consideration of contemporary replication. Costs and margins remain absent, so economic meaningfulness and profitable rollout are undetermined.
+
+**Reproduction:** `python -m src.statistical_pipeline` generates [strict JSON](reports/session2/inferential_results.json), CSV tables, bootstrap diagnostics and [the statistical report](reports/session2/STATISTICAL_REPORT.md). Seed 20261020, 10,000 customer bootstrap replications, including all zero-spend observations. Full local test suite: **46 passed, 0 failed, 0 skipped**. See [QA evidence](docs/QA.md).

@@ -1,0 +1,3218 @@
+{
+  "metadata": {
+    "source_sha256": "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece",
+    "plan_sha256": "012c8a5941f479affcedbde709d0649157e3a7be66e72d3b4848779a212c3bf0",
+    "bootstrap_reps": 10000,
+    "seed": 20261020,
+    "runtime_seconds": 1.122,
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "statsmodels": "0.15.0"
+    },
+    "checks": {
+      "n": 64000,
+      "unique_trace_ids": 64000,
+      "assignment_counts": {
+        "Control": 21306,
+        "Men's email": 21307,
+        "Women's email": 21387
+      },
+      "srm": {
+        "counts": {
+          "Control": 21306,
+          "Men's email": 21307,
+          "Women's email": 21387
+        },
+        "expected_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "allocation_basis": "Original challenge states one third randomly selected for each arm",
+        "srm_chi_square": 0.20253125000000002,
+        "srm_df": 2,
+        "srm_p_value": 0.9036929575604195,
+        "srm_flag_at_0_001": false,
+        "interpretation": "Preliminary allocation diagnostic only; no outcome significance test"
+      },
+      "max_absolute_baseline_smd": 0.016899120365944938,
+      "no_outcome_segmentation": true,
+      "original_randomization_logs_available": false
+    }
+  },
+  "results": {
+    "binary": [
+      {
+        "n_t": 21307,
+        "n_c": 21306,
+        "events_t": 267.0,
+        "events_c": 122.0,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.012531093068006,
+        "rate_c": 0.00572608654839,
+        "effect": 0.006805006519616,
+        "ci_low": 0.005014344671482,
+        "ci_high": 0.008640723396918,
+        "risk_ratio": 2.188421876286328,
+        "relative_effect": 1.188421876286328,
+        "rr_ci_low": 1.764708269386211,
+        "rr_ci_high": 2.701852959119159,
+        "relative_ci_low": 0.764708269386211,
+        "relative_ci_high": 1.701852959119159,
+        "p_raw": 1.17e-13,
+        "outcome": "conversion",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "comparison": "Men's email minus Control",
+        "family": "primary_conversion",
+        "mean_t": null,
+        "mean_c": null,
+        "bootstrap_reps": null,
+        "seed": null,
+        "bootstrap_se": null,
+        "analytic_se": null,
+        "half_run_endpoint_drift": null,
+        "drift_fraction_width": null,
+        "convergence_warning": null,
+        "bootstrap_method": null,
+        "p_method": null,
+        "p_adjusted": 2.33e-13,
+        "family_size": 2.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21387,
+        "n_c": 21306,
+        "events_t": 189.0,
+        "events_c": 122.0,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.008837144059475,
+        "rate_c": 0.00572608654839,
+        "effect": 0.003111057511085,
+        "ci_low": 0.001501657131877,
+        "ci_high": 0.004745471313673,
+        "risk_ratio": 1.543313043698217,
+        "relative_effect": 0.543313043698217,
+        "rr_ci_low": 1.228819234209138,
+        "rr_ci_high": 1.932691388316497,
+        "relative_ci_low": 0.228819234209138,
+        "relative_ci_high": 0.932691388316497,
+        "p_raw": 0.000164998776342,
+        "outcome": "conversion",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "comparison": "Women's email minus Control",
+        "family": "primary_conversion",
+        "mean_t": null,
+        "mean_c": null,
+        "bootstrap_reps": null,
+        "seed": null,
+        "bootstrap_se": null,
+        "analytic_se": null,
+        "half_run_endpoint_drift": null,
+        "drift_fraction_width": null,
+        "convergence_warning": null,
+        "bootstrap_method": null,
+        "p_method": null,
+        "p_adjusted": 0.000164998776342,
+        "family_size": 2.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21307,
+        "n_c": 21387,
+        "events_t": 267.0,
+        "events_c": 189.0,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.012531093068006,
+        "rate_c": 0.008837144059475,
+        "effect": 0.00369394900853,
+        "ci_low": 0.00174628481419,
+        "ci_high": 0.005662614423392,
+        "risk_ratio": 1.418002579076405,
+        "relative_effect": 0.418002579076405,
+        "rr_ci_low": 1.177449079517459,
+        "rr_ci_high": 1.705069100878003,
+        "relative_ci_low": 0.177449079517459,
+        "relative_ci_high": 0.705069100878003,
+        "p_raw": 0.000232732157524,
+        "outcome": "conversion",
+        "treatment": "Men's email",
+        "reference": "Women's email",
+        "comparison": "Men's email minus Women's email",
+        "family": "exploratory_email_comparison",
+        "mean_t": null,
+        "mean_c": null,
+        "bootstrap_reps": null,
+        "seed": null,
+        "bootstrap_se": null,
+        "analytic_se": null,
+        "half_run_endpoint_drift": null,
+        "drift_fraction_width": null,
+        "convergence_warning": null,
+        "bootstrap_method": null,
+        "p_method": null,
+        "p_adjusted": 0.000465464315048,
+        "family_size": 3.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21307,
+        "n_c": 21306,
+        "events_t": 3894.0,
+        "events_c": 2262.0,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.182756840474961,
+        "rate_c": 0.10616727682343,
+        "effect": 0.076589563651531,
+        "ci_low": 0.069953308083732,
+        "ci_high": 0.083226741274111,
+        "risk_ratio": 1.721404616781399,
+        "relative_effect": 0.721404616781399,
+        "rr_ci_low": 1.640241210967032,
+        "rr_ci_high": 1.806249570385874,
+        "relative_ci_low": 0.640241210967032,
+        "relative_ci_high": 0.806249570385874,
+        "p_raw": 5.43735902795221e-113,
+        "outcome": "visit",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "comparison": "Men's email minus Control",
+        "family": "secondary_visit",
+        "mean_t": null,
+        "mean_c": null,
+        "bootstrap_reps": null,
+        "seed": null,
+        "bootstrap_se": null,
+        "analytic_se": null,
+        "half_run_endpoint_drift": null,
+        "drift_fraction_width": null,
+        "convergence_warning": null,
+        "bootstrap_method": null,
+        "p_method": null,
+        "p_adjusted": 1.08747180559044e-112,
+        "family_size": 2.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21387,
+        "n_c": 21306,
+        "events_t": 3238.0,
+        "events_c": 2262.0,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.151400383410483,
+        "rate_c": 0.10616727682343,
+        "effect": 0.045233106587053,
+        "ci_low": 0.038894095359988,
+        "ci_high": 0.051574342962214,
+        "risk_ratio": 1.42605507026691,
+        "relative_effect": 0.42605507026691,
+        "rr_ci_low": 1.356088435919017,
+        "rr_ci_high": 1.49943234640054,
+        "relative_ci_low": 0.356088435919017,
+        "relative_ci_high": 0.49943234640054,
+        "p_raw": 2.30099444738091e-44,
+        "outcome": "visit",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "comparison": "Women's email minus Control",
+        "family": "secondary_visit",
+        "mean_t": null,
+        "mean_c": null,
+        "bootstrap_reps": null,
+        "seed": null,
+        "bootstrap_se": null,
+        "analytic_se": null,
+        "half_run_endpoint_drift": null,
+        "drift_fraction_width": null,
+        "convergence_warning": null,
+        "bootstrap_method": null,
+        "p_method": null,
+        "p_adjusted": 2.30099444738091e-44,
+        "family_size": 2.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21307,
+        "n_c": 21387,
+        "events_t": 3894.0,
+        "events_c": 3238.0,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.182756840474961,
+        "rate_c": 0.151400383410483,
+        "effect": 0.031356457064478,
+        "ci_low": 0.024284125814801,
+        "ci_high": 0.038427658709806,
+        "risk_ratio": 1.207109495749844,
+        "relative_effect": 0.207109495749844,
+        "rr_ci_low": 1.156764581944084,
+        "rr_ci_high": 1.259579562661288,
+        "relative_ci_low": 0.156764581944084,
+        "relative_ci_high": 0.259579562661288,
+        "p_raw": 3.79405137918914e-18,
+        "outcome": "visit",
+        "treatment": "Men's email",
+        "reference": "Women's email",
+        "comparison": "Men's email minus Women's email",
+        "family": "exploratory_email_comparison",
+        "mean_t": null,
+        "mean_c": null,
+        "bootstrap_reps": null,
+        "seed": null,
+        "bootstrap_se": null,
+        "analytic_se": null,
+        "half_run_endpoint_drift": null,
+        "drift_fraction_width": null,
+        "convergence_warning": null,
+        "bootstrap_method": null,
+        "p_method": null,
+        "p_adjusted": 1.13821541375674e-17,
+        "family_size": 3.0,
+        "reject_holm_005": true
+      }
+    ],
+    "revenue": [
+      {
+        "n_t": 21307,
+        "n_c": 21306,
+        "events_t": null,
+        "events_c": null,
+        "method": null,
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": null,
+        "status": null,
+        "rate_t": null,
+        "rate_c": null,
+        "effect": 0.769827155894537,
+        "ci_low": 0.488843950602024,
+        "ci_high": 1.057274164706138,
+        "risk_ratio": null,
+        "relative_effect": null,
+        "rr_ci_low": null,
+        "rr_ci_high": null,
+        "relative_ci_low": null,
+        "relative_ci_high": null,
+        "p_raw": 1.16381497e-07,
+        "outcome": "spend",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "comparison": "Men's email minus Control",
+        "family": "secondary_revenue",
+        "mean_t": 1.422616511005773,
+        "mean_c": 0.652789355111236,
+        "bootstrap_reps": 10000.0,
+        "seed": 20261020.0,
+        "bootstrap_se": 0.146085460319304,
+        "analytic_se": 0.145246560248687,
+        "half_run_endpoint_drift": 0.00160426532721,
+        "drift_fraction_width": 0.002822273143482,
+        "convergence_warning": false,
+        "bootstrap_method": "empirical customer bootstrap; percentile interval",
+        "p_method": "Welch two-sided approximate mean test",
+        "p_adjusted": 2.32762994e-07,
+        "family_size": 2.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21387,
+        "n_c": 21306,
+        "events_t": null,
+        "events_c": null,
+        "method": null,
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": null,
+        "status": null,
+        "rate_t": null,
+        "rate_c": null,
+        "effect": 0.424412215936597,
+        "ci_low": 0.169034074276442,
+        "ci_high": 0.680954075220675,
+        "risk_ratio": null,
+        "relative_effect": null,
+        "rr_ci_low": null,
+        "rr_ci_high": null,
+        "relative_ci_low": null,
+        "relative_ci_high": null,
+        "p_raw": 0.001129397102363,
+        "outcome": "spend",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "comparison": "Women's email minus Control",
+        "family": "secondary_revenue",
+        "mean_t": 1.077201571047833,
+        "mean_c": 0.652789355111236,
+        "bootstrap_reps": 10000.0,
+        "seed": 20261020.0,
+        "bootstrap_se": 0.13133668966941,
+        "analytic_se": 0.130332858529191,
+        "half_run_endpoint_drift": 0.003169204635242,
+        "drift_fraction_width": 0.006190820107432,
+        "convergence_warning": false,
+        "bootstrap_method": "empirical customer bootstrap; percentile interval",
+        "p_method": "Welch two-sided approximate mean test",
+        "p_adjusted": 0.001129397102363,
+        "family_size": 2.0,
+        "reject_holm_005": true
+      },
+      {
+        "n_t": 21307,
+        "n_c": 21387,
+        "events_t": null,
+        "events_c": null,
+        "method": null,
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": null,
+        "status": null,
+        "rate_t": null,
+        "rate_c": null,
+        "effect": 0.34541493995794,
+        "ci_low": 0.029083323485142,
+        "ci_high": 0.656922508258189,
+        "risk_ratio": null,
+        "relative_effect": null,
+        "rr_ci_low": null,
+        "rr_ci_high": null,
+        "relative_ci_low": null,
+        "relative_ci_high": null,
+        "p_raw": 0.030468651185299,
+        "outcome": "spend",
+        "treatment": "Men's email",
+        "reference": "Women's email",
+        "comparison": "Men's email minus Women's email",
+        "family": "exploratory_email_comparison",
+        "mean_t": 1.422616511005773,
+        "mean_c": 1.077201571047833,
+        "bootstrap_reps": 10000.0,
+        "seed": 20261020.0,
+        "bootstrap_se": 0.160925549565,
+        "analytic_se": 0.159617414841654,
+        "half_run_endpoint_drift": 0.007442960837901,
+        "drift_fraction_width": 0.011854884209865,
+        "convergence_warning": false,
+        "bootstrap_method": "empirical customer bootstrap; percentile interval",
+        "p_method": "Welch two-sided approximate mean test",
+        "p_adjusted": 0.030468651185299,
+        "family_size": 3.0,
+        "reject_holm_005": true
+      }
+    ],
+    "bootstrap_histogram": [
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.247458224766507,
+        "right": 0.258514560739315,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.258514560739315,
+        "right": 0.269570896712122,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.269570896712122,
+        "right": 0.28062723268493,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.28062723268493,
+        "right": 0.291683568657737,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.291683568657737,
+        "right": 0.302739904630545,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.302739904630545,
+        "right": 0.313796240603352,
+        "count": 3
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.313796240603352,
+        "right": 0.32485257657616,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.32485257657616,
+        "right": 0.335908912548967,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.335908912548967,
+        "right": 0.346965248521774,
+        "count": 3
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.346965248521774,
+        "right": 0.358021584494582,
+        "count": 5
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.358021584494582,
+        "right": 0.369077920467389,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.369077920467389,
+        "right": 0.380134256440197,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.380134256440197,
+        "right": 0.391190592413004,
+        "count": 13
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.391190592413004,
+        "right": 0.402246928385812,
+        "count": 9
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.402246928385812,
+        "right": 0.413303264358619,
+        "count": 11
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.413303264358619,
+        "right": 0.424359600331427,
+        "count": 17
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.424359600331427,
+        "right": 0.435415936304234,
+        "count": 21
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.435415936304234,
+        "right": 0.446472272277042,
+        "count": 17
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.446472272277042,
+        "right": 0.457528608249849,
+        "count": 17
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.457528608249849,
+        "right": 0.468584944222657,
+        "count": 33
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.468584944222657,
+        "right": 0.479641280195464,
+        "count": 47
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.479641280195464,
+        "right": 0.490697616168272,
+        "count": 41
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.490697616168272,
+        "right": 0.501753952141079,
+        "count": 46
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.501753952141079,
+        "right": 0.512810288113886,
+        "count": 71
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.512810288113886,
+        "right": 0.523866624086694,
+        "count": 66
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.523866624086694,
+        "right": 0.534922960059501,
+        "count": 81
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.534922960059501,
+        "right": 0.545979296032309,
+        "count": 85
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.545979296032309,
+        "right": 0.557035632005116,
+        "count": 105
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.557035632005116,
+        "right": 0.568091967977924,
+        "count": 115
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.568091967977924,
+        "right": 0.579148303950731,
+        "count": 115
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.579148303950731,
+        "right": 0.590204639923539,
+        "count": 130
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.590204639923539,
+        "right": 0.601260975896346,
+        "count": 157
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.601260975896346,
+        "right": 0.612317311869154,
+        "count": 145
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.612317311869154,
+        "right": 0.623373647841961,
+        "count": 201
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.623373647841961,
+        "right": 0.634429983814769,
+        "count": 197
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.634429983814769,
+        "right": 0.645486319787576,
+        "count": 196
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.645486319787576,
+        "right": 0.656542655760384,
+        "count": 242
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.656542655760384,
+        "right": 0.667598991733191,
+        "count": 245
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.667598991733191,
+        "right": 0.678655327705998,
+        "count": 248
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.678655327705998,
+        "right": 0.689711663678806,
+        "count": 279
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.689711663678806,
+        "right": 0.700767999651613,
+        "count": 277
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.700767999651613,
+        "right": 0.711824335624421,
+        "count": 287
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.711824335624421,
+        "right": 0.722880671597228,
+        "count": 279
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.722880671597228,
+        "right": 0.733937007570036,
+        "count": 246
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.733937007570036,
+        "right": 0.744993343542843,
+        "count": 299
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.744993343542843,
+        "right": 0.756049679515651,
+        "count": 310
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.756049679515651,
+        "right": 0.767106015488458,
+        "count": 278
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.767106015488458,
+        "right": 0.778162351461266,
+        "count": 267
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.778162351461266,
+        "right": 0.789218687434073,
+        "count": 303
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.789218687434073,
+        "right": 0.800275023406881,
+        "count": 293
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.800275023406881,
+        "right": 0.811331359379688,
+        "count": 299
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.811331359379688,
+        "right": 0.822387695352496,
+        "count": 297
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.822387695352496,
+        "right": 0.833444031325303,
+        "count": 313
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.833444031325303,
+        "right": 0.84450036729811,
+        "count": 250
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.84450036729811,
+        "right": 0.855556703270918,
+        "count": 227
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.855556703270918,
+        "right": 0.866613039243725,
+        "count": 239
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.866613039243725,
+        "right": 0.877669375216533,
+        "count": 236
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.877669375216533,
+        "right": 0.88872571118934,
+        "count": 210
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.88872571118934,
+        "right": 0.899782047162148,
+        "count": 209
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.899782047162148,
+        "right": 0.910838383134955,
+        "count": 183
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.910838383134955,
+        "right": 0.921894719107763,
+        "count": 177
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.921894719107763,
+        "right": 0.93295105508057,
+        "count": 203
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.93295105508057,
+        "right": 0.944007391053378,
+        "count": 164
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.944007391053378,
+        "right": 0.955063727026185,
+        "count": 141
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.955063727026185,
+        "right": 0.966120062998992,
+        "count": 116
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.966120062998992,
+        "right": 0.9771763989718,
+        "count": 147
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.9771763989718,
+        "right": 0.988232734944608,
+        "count": 126
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.988232734944608,
+        "right": 0.999289070917415,
+        "count": 87
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 0.999289070917415,
+        "right": 1.010345406890222,
+        "count": 68
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.010345406890222,
+        "right": 1.02140174286303,
+        "count": 70
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.02140174286303,
+        "right": 1.032458078835838,
+        "count": 64
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.032458078835838,
+        "right": 1.043514414808645,
+        "count": 53
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.043514414808645,
+        "right": 1.054570750781452,
+        "count": 43
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.054570750781452,
+        "right": 1.06562708675426,
+        "count": 36
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.06562708675426,
+        "right": 1.076683422727067,
+        "count": 32
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.076683422727067,
+        "right": 1.087739758699875,
+        "count": 30
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.087739758699875,
+        "right": 1.098796094672682,
+        "count": 31
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.098796094672682,
+        "right": 1.10985243064549,
+        "count": 18
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.10985243064549,
+        "right": 1.120908766618297,
+        "count": 21
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.120908766618297,
+        "right": 1.131965102591105,
+        "count": 16
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.131965102591105,
+        "right": 1.143021438563912,
+        "count": 13
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.143021438563912,
+        "right": 1.15407777453672,
+        "count": 9
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.15407777453672,
+        "right": 1.165134110509527,
+        "count": 8
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.165134110509527,
+        "right": 1.176190446482334,
+        "count": 10
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.176190446482334,
+        "right": 1.187246782455142,
+        "count": 5
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.187246782455142,
+        "right": 1.198303118427949,
+        "count": 7
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.198303118427949,
+        "right": 1.209359454400757,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.209359454400757,
+        "right": 1.220415790373564,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.220415790373564,
+        "right": 1.231472126346372,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.231472126346372,
+        "right": 1.242528462319179,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.242528462319179,
+        "right": 1.253584798291987,
+        "count": 6
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.253584798291987,
+        "right": 1.264641134264794,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.264641134264794,
+        "right": 1.275697470237602,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.275697470237602,
+        "right": 1.286753806210409,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.286753806210409,
+        "right": 1.297810142183216,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.297810142183216,
+        "right": 1.308866478156024,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.308866478156024,
+        "right": 1.319922814128832,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.319922814128832,
+        "right": 1.330979150101639,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.330979150101639,
+        "right": 1.342035486074447,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Control",
+        "left": 1.342035486074447,
+        "right": 1.353091822047254,
+        "count": 1
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": -0.010973903998746,
+        "right": -0.001362814183462,
+        "count": 3
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": -0.001362814183462,
+        "right": 0.008248275631821,
+        "count": 2
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.008248275631821,
+        "right": 0.017859365447105,
+        "count": 4
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.017859365447105,
+        "right": 0.027470455262388,
+        "count": 1
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.027470455262388,
+        "right": 0.037081545077672,
+        "count": 5
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.037081545077672,
+        "right": 0.046692634892956,
+        "count": 3
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.046692634892956,
+        "right": 0.056303724708239,
+        "count": 4
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.056303724708239,
+        "right": 0.065914814523523,
+        "count": 9
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.065914814523523,
+        "right": 0.075525904338806,
+        "count": 7
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.075525904338806,
+        "right": 0.08513699415409,
+        "count": 7
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.08513699415409,
+        "right": 0.094748083969374,
+        "count": 15
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.094748083969374,
+        "right": 0.104359173784657,
+        "count": 17
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.104359173784657,
+        "right": 0.113970263599941,
+        "count": 19
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.113970263599941,
+        "right": 0.123581353415224,
+        "count": 17
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.123581353415224,
+        "right": 0.133192443230508,
+        "count": 21
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.133192443230508,
+        "right": 0.142803533045792,
+        "count": 24
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.142803533045792,
+        "right": 0.152414622861075,
+        "count": 28
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.152414622861075,
+        "right": 0.162025712676359,
+        "count": 38
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.162025712676359,
+        "right": 0.171636802491643,
+        "count": 40
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.171636802491643,
+        "right": 0.181247892306926,
+        "count": 46
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.181247892306926,
+        "right": 0.19085898212221,
+        "count": 42
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.19085898212221,
+        "right": 0.200470071937493,
+        "count": 64
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.200470071937493,
+        "right": 0.210081161752777,
+        "count": 68
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.210081161752777,
+        "right": 0.219692251568061,
+        "count": 75
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.219692251568061,
+        "right": 0.229303341383344,
+        "count": 84
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.229303341383344,
+        "right": 0.238914431198628,
+        "count": 111
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.238914431198628,
+        "right": 0.248525521013911,
+        "count": 104
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.248525521013911,
+        "right": 0.258136610829195,
+        "count": 159
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.258136610829195,
+        "right": 0.267747700644479,
+        "count": 136
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.267747700644479,
+        "right": 0.277358790459762,
+        "count": 154
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.277358790459762,
+        "right": 0.286969880275046,
+        "count": 174
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.286969880275046,
+        "right": 0.29658097009033,
+        "count": 171
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.29658097009033,
+        "right": 0.306192059905613,
+        "count": 199
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.306192059905613,
+        "right": 0.315803149720897,
+        "count": 201
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.315803149720897,
+        "right": 0.32541423953618,
+        "count": 194
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.32541423953618,
+        "right": 0.335025329351464,
+        "count": 219
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.335025329351464,
+        "right": 0.344636419166748,
+        "count": 228
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.344636419166748,
+        "right": 0.354247508982031,
+        "count": 269
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.354247508982031,
+        "right": 0.363858598797315,
+        "count": 243
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.363858598797315,
+        "right": 0.373469688612598,
+        "count": 252
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.373469688612598,
+        "right": 0.383080778427882,
+        "count": 275
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.383080778427882,
+        "right": 0.392691868243166,
+        "count": 271
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.392691868243166,
+        "right": 0.402302958058449,
+        "count": 292
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.402302958058449,
+        "right": 0.411914047873733,
+        "count": 305
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.411914047873733,
+        "right": 0.421525137689016,
+        "count": 253
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.421525137689016,
+        "right": 0.4311362275043,
+        "count": 304
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.4311362275043,
+        "right": 0.440747317319584,
+        "count": 302
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.440747317319584,
+        "right": 0.450358407134867,
+        "count": 304
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.450358407134867,
+        "right": 0.459969496950151,
+        "count": 300
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.459969496950151,
+        "right": 0.469580586765435,
+        "count": 313
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.469580586765435,
+        "right": 0.479191676580718,
+        "count": 227
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.479191676580718,
+        "right": 0.488802766396002,
+        "count": 253
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.488802766396002,
+        "right": 0.498413856211285,
+        "count": 257
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.498413856211285,
+        "right": 0.508024946026569,
+        "count": 258
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.508024946026569,
+        "right": 0.517636035841853,
+        "count": 240
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.517636035841853,
+        "right": 0.527247125657136,
+        "count": 189
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.527247125657136,
+        "right": 0.53685821547242,
+        "count": 182
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.53685821547242,
+        "right": 0.546469305287703,
+        "count": 203
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.546469305287703,
+        "right": 0.556080395102987,
+        "count": 191
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.556080395102987,
+        "right": 0.565691484918271,
+        "count": 163
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.565691484918271,
+        "right": 0.575302574733554,
+        "count": 165
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.575302574733554,
+        "right": 0.584913664548838,
+        "count": 146
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.584913664548838,
+        "right": 0.594524754364122,
+        "count": 128
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.594524754364122,
+        "right": 0.604135844179405,
+        "count": 119
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.604135844179405,
+        "right": 0.613746933994689,
+        "count": 125
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.613746933994689,
+        "right": 0.623358023809972,
+        "count": 97
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.623358023809972,
+        "right": 0.632969113625256,
+        "count": 103
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.632969113625256,
+        "right": 0.64258020344054,
+        "count": 76
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.64258020344054,
+        "right": 0.652191293255823,
+        "count": 64
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.652191293255823,
+        "right": 0.661802383071107,
+        "count": 72
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.661802383071107,
+        "right": 0.67141347288639,
+        "count": 62
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.67141347288639,
+        "right": 0.681024562701674,
+        "count": 55
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.681024562701674,
+        "right": 0.690635652516958,
+        "count": 34
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.690635652516958,
+        "right": 0.700246742332241,
+        "count": 39
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.700246742332241,
+        "right": 0.709857832147525,
+        "count": 28
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.709857832147525,
+        "right": 0.719468921962808,
+        "count": 23
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.719468921962808,
+        "right": 0.729080011778092,
+        "count": 22
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.729080011778092,
+        "right": 0.738691101593376,
+        "count": 19
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.738691101593376,
+        "right": 0.748302191408659,
+        "count": 15
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.748302191408659,
+        "right": 0.757913281223943,
+        "count": 15
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.757913281223943,
+        "right": 0.767524371039226,
+        "count": 11
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.767524371039226,
+        "right": 0.77713546085451,
+        "count": 7
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.77713546085451,
+        "right": 0.786746550669794,
+        "count": 5
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.786746550669794,
+        "right": 0.796357640485077,
+        "count": 6
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.796357640485077,
+        "right": 0.805968730300361,
+        "count": 7
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.805968730300361,
+        "right": 0.815579820115645,
+        "count": 3
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.815579820115645,
+        "right": 0.825190909930928,
+        "count": 1
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.825190909930928,
+        "right": 0.834801999746212,
+        "count": 6
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.834801999746212,
+        "right": 0.844413089561495,
+        "count": 5
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.844413089561495,
+        "right": 0.854024179376779,
+        "count": 1
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.854024179376779,
+        "right": 0.863635269192063,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.863635269192063,
+        "right": 0.873246359007346,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.873246359007346,
+        "right": 0.88285744882263,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.88285744882263,
+        "right": 0.892468538637914,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.892468538637914,
+        "right": 0.902079628453197,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.902079628453197,
+        "right": 0.911690718268481,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.911690718268481,
+        "right": 0.921301808083764,
+        "count": 1
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.921301808083764,
+        "right": 0.930912897899048,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.930912897899048,
+        "right": 0.940523987714332,
+        "count": 0
+      },
+      {
+        "comparison": "Women's email minus Control",
+        "left": 0.940523987714332,
+        "right": 0.950135077529615,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.278504995302658,
+        "right": -0.265566073889483,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.265566073889483,
+        "right": -0.252627152476308,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.252627152476308,
+        "right": -0.239688231063132,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.239688231063132,
+        "right": -0.226749309649957,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.226749309649957,
+        "right": -0.213810388236782,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.213810388236782,
+        "right": -0.200871466823607,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.200871466823607,
+        "right": -0.187932545410432,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.187932545410432,
+        "right": -0.174993623997257,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.174993623997257,
+        "right": -0.162054702584082,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.162054702584082,
+        "right": -0.149115781170907,
+        "count": 3
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.149115781170907,
+        "right": -0.136176859757732,
+        "count": 3
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.136176859757732,
+        "right": -0.123237938344557,
+        "count": 5
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.123237938344557,
+        "right": -0.110299016931382,
+        "count": 5
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.110299016931382,
+        "right": -0.097360095518207,
+        "count": 3
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.097360095518207,
+        "right": -0.084421174105032,
+        "count": 12
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.084421174105032,
+        "right": -0.071482252691857,
+        "count": 15
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.071482252691857,
+        "right": -0.058543331278681,
+        "count": 13
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.058543331278681,
+        "right": -0.045604409865506,
+        "count": 22
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.045604409865506,
+        "right": -0.032665488452331,
+        "count": 17
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.032665488452331,
+        "right": -0.019726567039156,
+        "count": 21
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.019726567039156,
+        "right": -0.006787645625981,
+        "count": 27
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": -0.006787645625981,
+        "right": 0.006151275787194,
+        "count": 30
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.006151275787194,
+        "right": 0.019090197200369,
+        "count": 30
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.019090197200369,
+        "right": 0.032029118613544,
+        "count": 47
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.032029118613544,
+        "right": 0.044968040026719,
+        "count": 56
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.044968040026719,
+        "right": 0.057906961439894,
+        "count": 54
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.057906961439894,
+        "right": 0.070845882853069,
+        "count": 64
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.070845882853069,
+        "right": 0.083784804266244,
+        "count": 76
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.083784804266244,
+        "right": 0.096723725679419,
+        "count": 81
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.096723725679419,
+        "right": 0.109662647092595,
+        "count": 121
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.109662647092595,
+        "right": 0.12260156850577,
+        "count": 121
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.12260156850577,
+        "right": 0.135540489918945,
+        "count": 126
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.135540489918945,
+        "right": 0.14847941133212,
+        "count": 144
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.14847941133212,
+        "right": 0.161418332745295,
+        "count": 162
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.161418332745295,
+        "right": 0.17435725415847,
+        "count": 185
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.17435725415847,
+        "right": 0.187296175571645,
+        "count": 186
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.187296175571645,
+        "right": 0.20023509698482,
+        "count": 190
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.20023509698482,
+        "right": 0.213174018397995,
+        "count": 202
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.213174018397995,
+        "right": 0.22611293981117,
+        "count": 250
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.22611293981117,
+        "right": 0.239051861224345,
+        "count": 256
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.239051861224345,
+        "right": 0.25199078263752,
+        "count": 281
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.25199078263752,
+        "right": 0.264929704050695,
+        "count": 272
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.264929704050695,
+        "right": 0.27786862546387,
+        "count": 278
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.27786862546387,
+        "right": 0.290807546877046,
+        "count": 313
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.290807546877046,
+        "right": 0.303746468290221,
+        "count": 299
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.303746468290221,
+        "right": 0.316685389703396,
+        "count": 314
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.316685389703396,
+        "right": 0.329624311116571,
+        "count": 335
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.329624311116571,
+        "right": 0.342563232529746,
+        "count": 324
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.342563232529746,
+        "right": 0.355502153942921,
+        "count": 326
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.355502153942921,
+        "right": 0.368441075356096,
+        "count": 304
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.368441075356096,
+        "right": 0.381379996769271,
+        "count": 343
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.381379996769271,
+        "right": 0.394318918182446,
+        "count": 286
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.394318918182446,
+        "right": 0.407257839595621,
+        "count": 292
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.407257839595621,
+        "right": 0.420196761008796,
+        "count": 283
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.420196761008796,
+        "right": 0.433135682421971,
+        "count": 282
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.433135682421971,
+        "right": 0.446074603835146,
+        "count": 271
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.446074603835146,
+        "right": 0.459013525248322,
+        "count": 272
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.459013525248322,
+        "right": 0.471952446661497,
+        "count": 237
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.471952446661497,
+        "right": 0.484891368074672,
+        "count": 242
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.484891368074672,
+        "right": 0.497830289487847,
+        "count": 215
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.497830289487847,
+        "right": 0.510769210901022,
+        "count": 184
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.510769210901022,
+        "right": 0.523708132314197,
+        "count": 157
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.523708132314197,
+        "right": 0.536647053727372,
+        "count": 168
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.536647053727372,
+        "right": 0.549585975140547,
+        "count": 159
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.549585975140547,
+        "right": 0.562524896553722,
+        "count": 137
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.562524896553722,
+        "right": 0.575463817966897,
+        "count": 126
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.575463817966897,
+        "right": 0.588402739380072,
+        "count": 117
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.588402739380072,
+        "right": 0.601341660793247,
+        "count": 94
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.601341660793247,
+        "right": 0.614280582206422,
+        "count": 89
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.614280582206422,
+        "right": 0.627219503619598,
+        "count": 75
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.627219503619598,
+        "right": 0.640158425032773,
+        "count": 58
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.640158425032773,
+        "right": 0.653097346445948,
+        "count": 56
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.653097346445948,
+        "right": 0.666036267859123,
+        "count": 58
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.666036267859123,
+        "right": 0.678975189272298,
+        "count": 39
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.678975189272298,
+        "right": 0.691914110685473,
+        "count": 44
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.691914110685473,
+        "right": 0.704853032098648,
+        "count": 25
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.704853032098648,
+        "right": 0.717791953511823,
+        "count": 23
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.717791953511823,
+        "right": 0.730730874924998,
+        "count": 24
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.730730874924998,
+        "right": 0.743669796338173,
+        "count": 7
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.743669796338173,
+        "right": 0.756608717751348,
+        "count": 11
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.756608717751348,
+        "right": 0.769547639164523,
+        "count": 10
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.769547639164523,
+        "right": 0.782486560577698,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.782486560577698,
+        "right": 0.795425481990874,
+        "count": 4
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.795425481990874,
+        "right": 0.808364403404048,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.808364403404048,
+        "right": 0.821303324817224,
+        "count": 3
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.821303324817224,
+        "right": 0.834242246230399,
+        "count": 5
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.834242246230399,
+        "right": 0.847181167643574,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.847181167643574,
+        "right": 0.860120089056749,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.860120089056749,
+        "right": 0.873059010469924,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.873059010469924,
+        "right": 0.885997931883099,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.885997931883099,
+        "right": 0.898936853296274,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.898936853296274,
+        "right": 0.911875774709449,
+        "count": 2
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.911875774709449,
+        "right": 0.924814696122624,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.924814696122624,
+        "right": 0.937753617535799,
+        "count": 1
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.937753617535799,
+        "right": 0.950692538948974,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.950692538948974,
+        "right": 0.963631460362149,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.963631460362149,
+        "right": 0.976570381775325,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.976570381775325,
+        "right": 0.9895093031885,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 0.9895093031885,
+        "right": 1.002448224601675,
+        "count": 0
+      },
+      {
+        "comparison": "Men's email minus Women's email",
+        "left": 1.002448224601675,
+        "right": 1.01538714601485,
+        "count": 2
+      }
+    ],
+    "revenue_diagnostics": [
+      {
+        "arm": "Control",
+        "n": 21306,
+        "positive_spend_count": 122,
+        "zero_share": 0.99427391345161,
+        "mean": 0.652789355111236,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 499.0,
+        "top_1pct_spend_share": 1.0
+      },
+      {
+        "arm": "Men's email",
+        "n": 21307,
+        "positive_spend_count": 267,
+        "zero_share": 0.987468906931994,
+        "mean": 1.422616511005773,
+        "p95": 0.0,
+        "p99": 29.99,
+        "max": 499.0,
+        "top_1pct_spend_share": 0.947562475071499
+      },
+      {
+        "arm": "Women's email",
+        "n": 21387,
+        "positive_spend_count": 189,
+        "zero_share": 0.991162855940525,
+        "mean": 1.077201571047833,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 499.0,
+        "top_1pct_spend_share": 1.0
+      }
+    ],
+    "segments": [
+      {
+        "n_t": 2577,
+        "n_c": 2606,
+        "events_t": 44,
+        "events_c": 18,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.017074117190532,
+        "rate_c": 0.006907137375288,
+        "effect": 0.010166979815244,
+        "ci_low": 0.00428178819562,
+        "ci_high": 0.016467098296696,
+        "risk_ratio": 2.471952744362523,
+        "relative_effect": 1.471952744362523,
+        "rr_ci_low": 1.418292047201191,
+        "rr_ci_high": 4.171835100281365,
+        "relative_ci_low": 0.418292047201191,
+        "relative_ci_high": 3.171835100281365,
+        "p_raw": 0.000791868878034,
+        "variable": "channel",
+        "level": "Multichannel",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.008710557658371,
+        "family_size": 28
+      },
+      {
+        "n_t": 9240,
+        "n_c": 9327,
+        "events_t": 100,
+        "events_c": 50,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.010822510822511,
+        "rate_c": 0.005360780529645,
+        "effect": 0.005461730292866,
+        "ci_low": 0.002901033131991,
+        "ci_high": 0.00811917673757,
+        "risk_ratio": 2.018831168831169,
+        "relative_effect": 1.018831168831169,
+        "rr_ci_low": 1.434347551656585,
+        "rr_ci_high": 2.813416985995835,
+        "relative_ci_low": 0.434347551656585,
+        "relative_ci_high": 1.813416985995835,
+        "p_raw": 3.5565772922e-05,
+        "variable": "channel",
+        "level": "Phone",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000569052366748,
+        "family_size": 28
+      },
+      {
+        "n_t": 9490,
+        "n_c": 9373,
+        "events_t": 123,
+        "events_c": 54,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.012961011591149,
+        "rate_c": 0.0057612290622,
+        "effect": 0.007199782528949,
+        "ci_low": 0.00447795540156,
+        "ci_high": 0.010020606687092,
+        "risk_ratio": 2.249695585996956,
+        "relative_effect": 1.249695585996956,
+        "rr_ci_low": 1.629354990997156,
+        "rr_ci_high": 3.074334699742016,
+        "relative_ci_low": 0.629354990997156,
+        "relative_ci_high": 2.074334699742016,
+        "p_raw": 3.04535752e-07,
+        "variable": "channel",
+        "level": "Web",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 7.004322306e-06,
+        "family_size": 28
+      },
+      {
+        "n_t": 2579,
+        "n_c": 2606,
+        "events_t": 36,
+        "events_c": 18,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.013958898797984,
+        "rate_c": 0.006907137375288,
+        "effect": 0.007051761422696,
+        "ci_low": 0.001504402691586,
+        "ci_high": 0.012930507050521,
+        "risk_ratio": 2.020938348196976,
+        "relative_effect": 1.020938348196976,
+        "rr_ci_low": 1.142523278610963,
+        "rr_ci_high": 3.478723131823564,
+        "relative_ci_low": 0.142523278610963,
+        "relative_ci_high": 2.478723131823564,
+        "p_raw": 0.013534433239805,
+        "variable": "channel",
+        "level": "Multichannel",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.108275465918439,
+        "family_size": 28
+      },
+      {
+        "n_t": 9454,
+        "n_c": 9327,
+        "events_t": 67,
+        "events_c": 50,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.007086947323884,
+        "rate_c": 0.005360780529645,
+        "effect": 0.001726166794239,
+        "ci_low": -0.000541829321957,
+        "ci_high": 0.004025929816948,
+        "risk_ratio": 1.321999153797334,
+        "relative_effect": 0.321999153797334,
+        "rr_ci_low": 0.916761255103483,
+        "rr_ci_high": 1.896804395551115,
+        "relative_ci_low": -0.083238744896517,
+        "relative_ci_high": 0.896804395551115,
+        "p_raw": 0.138580238263412,
+        "variable": "channel",
+        "level": "Phone",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.795460372386311,
+        "family_size": 28
+      },
+      {
+        "n_t": 9354,
+        "n_c": 9373,
+        "events_t": 86,
+        "events_c": 54,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.009193927731452,
+        "rate_c": 0.0057612290622,
+        "effect": 0.003432698669252,
+        "ci_low": 0.000964587105835,
+        "ci_high": 0.005963904203735,
+        "risk_ratio": 1.595827493090696,
+        "relative_effect": 0.595827493090696,
+        "rr_ci_low": 1.134534884247616,
+        "rr_ci_high": 2.229377794801079,
+        "relative_ci_low": 0.134534884247616,
+        "relative_ci_high": 1.229377794801079,
+        "p_raw": 0.006574807010731,
+        "variable": "channel",
+        "level": "Web",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.06574807010731,
+        "family_size": 28
+      },
+      {
+        "n_t": 7469,
+        "n_c": 7438,
+        "events_t": 122,
+        "events_c": 67,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.016334181282635,
+        "rate_c": 0.009007797795106,
+        "effect": 0.007326383487529,
+        "ci_low": 0.003751361519827,
+        "ci_high": 0.010994942908096,
+        "risk_ratio": 1.81333791612296,
+        "relative_effect": 0.81333791612296,
+        "rr_ci_low": 1.345092627328026,
+        "rr_ci_high": 2.428288892272812,
+        "relative_ci_low": 0.345092627328026,
+        "relative_ci_high": 1.428288892272812,
+        "p_raw": 6.9774328955e-05,
+        "variable": "recency_band",
+        "level": "1\u20133 months",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000976840605367,
+        "family_size": 28
+      },
+      {
+        "n_t": 4673,
+        "n_c": 4766,
+        "events_t": 49,
+        "events_c": 26,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.010485769313075,
+        "rate_c": 0.005455308434746,
+        "effect": 0.005030460878329,
+        "ci_low": 0.001444663102252,
+        "ci_high": 0.00879971677666,
+        "risk_ratio": 1.922122174850615,
+        "relative_effect": 0.922122174850615,
+        "rr_ci_low": 1.190637910212884,
+        "rr_ci_high": 3.048258765015222,
+        "relative_ci_low": 0.190637910212884,
+        "relative_ci_high": 2.048258765015222,
+        "p_raw": 0.00728413526882,
+        "variable": "recency_band",
+        "level": "4\u20136 months",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.06574807010731,
+        "family_size": 28
+      },
+      {
+        "n_t": 9165,
+        "n_c": 9102,
+        "events_t": 96,
+        "events_c": 29,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.010474631751227,
+        "rate_c": 0.003186112942211,
+        "effect": 0.007288518809017,
+        "ci_low": 0.004945749516519,
+        "ci_high": 0.009782556196832,
+        "risk_ratio": 3.287589593092161,
+        "relative_effect": 2.287589593092161,
+        "rr_ci_low": 2.15315430289523,
+        "rr_ci_high": 4.901678474468745,
+        "relative_ci_low": 1.15315430289523,
+        "relative_ci_high": 3.901678474468745,
+        "p_raw": 1.297655e-09,
+        "variable": "recency_band",
+        "level": "7\u201312 months",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 3.5036675e-08,
+        "family_size": 28
+      },
+      {
+        "n_t": 7486,
+        "n_c": 7438,
+        "events_t": 88,
+        "events_c": 67,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.011755276516164,
+        "rate_c": 0.009007797795106,
+        "effect": 0.002747478721057,
+        "ci_low": -0.000521592896414,
+        "ci_high": 0.006057061995321,
+        "risk_ratio": 1.30501114518245,
+        "relative_effect": 0.30501114518245,
+        "rr_ci_low": 0.950605879254338,
+        "rr_ci_high": 1.785220852075204,
+        "relative_ci_low": -0.049394120745662,
+        "relative_ci_high": 0.785220852075204,
+        "p_raw": 0.106330535389307,
+        "variable": "recency_band",
+        "level": "1\u20133 months",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.744313747725152,
+        "family_size": 28
+      },
+      {
+        "n_t": 4753,
+        "n_c": 4766,
+        "events_t": 38,
+        "events_c": 26,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.007994950557543,
+        "rate_c": 0.005455308434746,
+        "effect": 0.002539642122796,
+        "ci_low": -0.000787026651055,
+        "ci_high": 0.005967179378552,
+        "risk_ratio": 1.465535936817233,
+        "relative_effect": 0.465535936817233,
+        "rr_ci_low": 0.889734009495394,
+        "rr_ci_high": 2.385291544698515,
+        "relative_ci_low": -0.110265990504606,
+        "relative_ci_high": 1.385291544698515,
+        "p_raw": 0.134223123846655,
+        "variable": "recency_band",
+        "level": "4\u20136 months",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.795460372386311,
+        "family_size": 28
+      },
+      {
+        "n_t": 9148,
+        "n_c": 9102,
+        "events_t": 63,
+        "events_c": 29,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.006886751202449,
+        "rate_c": 0.003186112942211,
+        "effect": 0.003700638260238,
+        "ci_low": 0.001658422992724,
+        "ci_high": 0.005844858028787,
+        "risk_ratio": 2.161489980851289,
+        "relative_effect": 1.161489980851289,
+        "rr_ci_low": 1.385229033347182,
+        "rr_ci_high": 3.311339147161752,
+        "relative_ci_low": 0.385229033347182,
+        "relative_ci_high": 2.311339147161752,
+        "p_raw": 0.000494799189943,
+        "variable": "recency_band",
+        "level": "7\u201312 months",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.00593759027931,
+        "family_size": 28
+      },
+      {
+        "n_t": 12416,
+        "n_c": 12448,
+        "events_t": 113,
+        "events_c": 52,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.009101159793814,
+        "rate_c": 0.004177377892031,
+        "effect": 0.004923781901784,
+        "ci_low": 0.002922260750889,
+        "ci_high": 0.007003488712457,
+        "risk_ratio": 2.178677636796194,
+        "relative_effect": 1.178677636796194,
+        "rr_ci_low": 1.564202597621623,
+        "rr_ci_high": 3.003417349065805,
+        "relative_ci_low": 0.564202597621623,
+        "relative_ci_high": 2.003417349065805,
+        "p_raw": 1.515794506e-06,
+        "variable": "historical_spend_band",
+        "level": "<= $200",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 3.1831684627e-05,
+        "family_size": 28
+      },
+      {
+        "n_t": 8891,
+        "n_c": 8858,
+        "events_t": 154,
+        "events_c": 70,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.017320886289506,
+        "rate_c": 0.007902461052156,
+        "effect": 0.00941842523735,
+        "ci_low": 0.006164908933512,
+        "ci_high": 0.01277539796648,
+        "risk_ratio": 2.191834439320662,
+        "relative_effect": 1.191834439320662,
+        "rr_ci_low": 1.649889062000194,
+        "rr_ci_high": 2.889312293828763,
+        "relative_ci_low": 0.649889062000194,
+        "relative_ci_high": 1.889312293828763,
+        "p_raw": 1.6698667e-08,
+        "variable": "historical_spend_band",
+        "level": "> $200",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 4.00768005e-07,
+        "family_size": 28
+      },
+      {
+        "n_t": 12362,
+        "n_c": 12448,
+        "events_t": 98,
+        "events_c": 52,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.0079275198188,
+        "rate_c": 0.004177377892031,
+        "effect": 0.003750141926769,
+        "ci_low": 0.001829302082393,
+        "ci_high": 0.005737725466885,
+        "risk_ratio": 1.897726282777245,
+        "relative_effect": 0.897726282777245,
+        "rr_ci_low": 1.352808941927226,
+        "rr_ci_high": 2.638387521892876,
+        "relative_ci_low": 0.352808941927226,
+        "relative_ci_high": 1.638387521892876,
+        "p_raw": 0.000149233909034,
+        "variable": "historical_spend_band",
+        "level": "<= $200",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.001940040817446,
+        "family_size": 28
+      },
+      {
+        "n_t": 9025,
+        "n_c": 8858,
+        "events_t": 91,
+        "events_c": 70,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.010083102493075,
+        "rate_c": 0.007902461052156,
+        "effect": 0.002180641440919,
+        "ci_low": -0.000603497713311,
+        "ci_high": 0.004990429842764,
+        "risk_ratio": 1.27594459833795,
+        "relative_effect": 0.27594459833795,
+        "rr_ci_low": 0.935043523677823,
+        "rr_ci_high": 1.73544507237366,
+        "relative_ci_low": -0.064956476322177,
+        "relative_ci_high": 0.73544507237366,
+        "p_raw": 0.132576728731052,
+        "variable": "historical_spend_band",
+        "level": "> $200",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.795460372386311,
+        "family_size": 28
+      },
+      {
+        "n_t": 10621,
+        "n_c": 10611,
+        "events_t": 148,
+        "events_c": 82,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.013934657753507,
+        "rate_c": 0.007727829610781,
+        "effect": 0.006206828142726,
+        "ci_low": 0.003435669313545,
+        "ci_high": 0.009045337454578,
+        "risk_ratio": 1.803178700273962,
+        "relative_effect": 0.803178700273962,
+        "rr_ci_low": 1.375835887331461,
+        "rr_ci_high": 2.350500052656635,
+        "relative_ci_low": 0.375835887331461,
+        "relative_ci_high": 1.350500052656635,
+        "p_raw": 1.4449428118e-05,
+        "variable": "newbie",
+        "level": "0",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000260089706132,
+        "family_size": 28
+      },
+      {
+        "n_t": 10686,
+        "n_c": 10695,
+        "events_t": 119,
+        "events_c": 40,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.011136065880591,
+        "rate_c": 0.003740065451145,
+        "effect": 0.007396000429446,
+        "ci_low": 0.005129785018371,
+        "ci_high": 0.009784500756404,
+        "risk_ratio": 2.977505614823133,
+        "relative_effect": 1.977505614823133,
+        "rr_ci_low": 2.06989847284054,
+        "rr_ci_high": 4.213159393012421,
+        "relative_ci_low": 1.06989847284054,
+        "relative_ci_high": 3.213159393012421,
+        "p_raw": 1.48534e-10,
+        "variable": "newbie",
+        "level": "1",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 4.158951e-09,
+        "family_size": 28
+      },
+      {
+        "n_t": 10624,
+        "n_c": 10611,
+        "events_t": 92,
+        "events_c": 82,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.008659638554217,
+        "rate_c": 0.007727829610781,
+        "effect": 0.000931808943436,
+        "ci_low": -0.001512087479323,
+        "ci_high": 0.003388731729489,
+        "risk_ratio": 1.120578349985307,
+        "relative_effect": 0.120578349985307,
+        "rr_ci_low": 0.833271131814364,
+        "rr_ci_high": 1.50496305042687,
+        "relative_ci_low": -0.166728868185636,
+        "relative_ci_high": 0.50496305042687,
+        "p_raw": 0.493404293163804,
+        "variable": "newbie",
+        "level": "0",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.986808586327607,
+        "family_size": 28
+      },
+      {
+        "n_t": 10763,
+        "n_c": 10695,
+        "events_t": 97,
+        "events_c": 40,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.009012357149494,
+        "rate_c": 0.003740065451145,
+        "effect": 0.005272291698348,
+        "ci_low": 0.0031656633696,
+        "ci_high": 0.007476967679457,
+        "risk_ratio": 2.409678992845861,
+        "relative_effect": 1.409678992845861,
+        "rr_ci_low": 1.659953257316207,
+        "rr_ci_high": 3.447456035135098,
+        "relative_ci_low": 0.659953257316207,
+        "relative_ci_high": 2.447456035135098,
+        "p_raw": 1.14915422e-06,
+        "variable": "newbie",
+        "level": "1",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 2.5281392844e-05,
+        "family_size": 28
+      },
+      {
+        "n_t": 9568,
+        "n_c": 9519,
+        "events_t": 104,
+        "events_c": 49,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.010869565217391,
+        "rate_c": 0.005147599537767,
+        "effect": 0.005721965679625,
+        "ci_low": 0.003212459584121,
+        "ci_high": 0.008325284833911,
+        "risk_ratio": 2.111579414374445,
+        "relative_effect": 1.111579414374445,
+        "rr_ci_low": 1.499441869136826,
+        "rr_ci_high": 2.941936788481918,
+        "relative_ci_low": 0.499441869136826,
+        "relative_ci_high": 1.941936788481918,
+        "p_raw": 9.60456355e-06,
+        "variable": "mens",
+        "level": "0",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000182486707449,
+        "family_size": 28
+      },
+      {
+        "n_t": 11739,
+        "n_c": 11787,
+        "events_t": 163,
+        "events_c": 73,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.013885339466735,
+        "rate_c": 0.006193263765165,
+        "effect": 0.00769207570157,
+        "ci_low": 0.005168104081692,
+        "ci_high": 0.010300394548402,
+        "risk_ratio": 2.24200679855347,
+        "relative_effect": 1.24200679855347,
+        "rr_ci_low": 1.698170686755344,
+        "rr_ci_high": 2.937808996146501,
+        "relative_ci_low": 0.698170686755344,
+        "relative_ci_high": 1.937808996146501,
+        "p_raw": 2.574673e-09,
+        "variable": "mens",
+        "level": "1",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 6.694149e-08,
+        "family_size": 28
+      },
+      {
+        "n_t": 9647,
+        "n_c": 9519,
+        "events_t": 99,
+        "events_c": 49,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.010262257696693,
+        "rate_c": 0.005147599537767,
+        "effect": 0.005114658158927,
+        "ci_low": 0.002653729281401,
+        "ci_high": 0.007658806214676,
+        "risk_ratio": 1.993600632955577,
+        "relative_effect": 0.993600632955577,
+        "rr_ci_low": 1.412140974502162,
+        "rr_ci_high": 2.785845428852775,
+        "relative_ci_low": 0.412140974502162,
+        "relative_ci_high": 1.785845428852775,
+        "p_raw": 4.7790438033e-05,
+        "variable": "mens",
+        "level": "0",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000716856570492,
+        "family_size": 28
+      },
+      {
+        "n_t": 11740,
+        "n_c": 11787,
+        "events_t": 90,
+        "events_c": 73,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.007666098807496,
+        "rate_c": 0.006193263765165,
+        "effect": 0.001472835042331,
+        "ci_low": -0.000659099782661,
+        "ci_high": 0.00362909237551,
+        "risk_ratio": 1.237812419780169,
+        "relative_effect": 0.237812419780169,
+        "rr_ci_low": 0.909709047783146,
+        "rr_ci_high": 1.679925584905125,
+        "relative_ci_low": -0.090290952216854,
+        "relative_ci_high": 0.679925584905125,
+        "p_raw": 0.181930257079872,
+        "variable": "mens",
+        "level": "1",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.795460372386311,
+        "family_size": 28
+      },
+      {
+        "n_t": 9558,
+        "n_c": 9638,
+        "events_t": 110,
+        "events_c": 53,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.011508683825068,
+        "rate_c": 0.005499066196306,
+        "effect": 0.006009617628762,
+        "ci_low": 0.003431232926199,
+        "ci_high": 0.008685390497322,
+        "risk_ratio": 2.092843296339725,
+        "relative_effect": 1.092843296339725,
+        "rr_ci_low": 1.504483848208217,
+        "rr_ci_high": 2.883158377687463,
+        "relative_ci_low": 0.504483848208217,
+        "relative_ci_high": 1.883158377687463,
+        "p_raw": 5.982211473e-06,
+        "variable": "womens",
+        "level": "0",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000119644229465,
+        "family_size": 28
+      },
+      {
+        "n_t": 11749,
+        "n_c": 11668,
+        "events_t": 157,
+        "events_c": 69,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.013362839390586,
+        "rate_c": 0.005913609873157,
+        "effect": 0.007449229517429,
+        "ci_low": 0.00497117529963,
+        "ci_high": 0.010009396298692,
+        "risk_ratio": 2.259675507382065,
+        "relative_effect": 1.259675507382065,
+        "rr_ci_low": 1.699101552283805,
+        "rr_ci_high": 2.98101194924502,
+        "relative_ci_low": 0.699101552283805,
+        "relative_ci_high": 1.98101194924502,
+        "p_raw": 4.088249e-09,
+        "variable": "womens",
+        "level": "1",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 1.02206224e-07,
+        "family_size": 28
+      },
+      {
+        "n_t": 9622,
+        "n_c": 9638,
+        "events_t": 59,
+        "events_c": 53,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.006131781334442,
+        "rate_c": 0.005499066196306,
+        "effect": 0.000632715138136,
+        "ci_low": -0.001542924675025,
+        "ci_high": 0.002823393053001,
+        "risk_ratio": 1.115058650968888,
+        "relative_effect": 0.115058650968888,
+        "rr_ci_low": 0.770867280544906,
+        "rr_ci_high": 1.609866058024442,
+        "relative_ci_low": -0.229132719455094,
+        "relative_ci_high": 0.609866058024442,
+        "p_raw": 0.57123582627092,
+        "variable": "womens",
+        "level": "0",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.986808586327607,
+        "family_size": 28
+      },
+      {
+        "n_t": 11765,
+        "n_c": 11668,
+        "events_t": 130,
+        "events_c": 69,
+        "method": "two-sided Fisher exact; Newcombe Wilson RD interval",
+        "ci_scope": "pointwise 95%; not multiplicity adjusted",
+        "relative_ci_method": "approximate log RR with +0.5 events and +1 denominators",
+        "status": "estimable",
+        "rate_t": 0.011049723756906,
+        "rate_c": 0.005913609873157,
+        "effect": 0.005136113883749,
+        "ci_low": 0.002800311175853,
+        "ci_high": 0.007535076408447,
+        "risk_ratio": 1.868524301385219,
+        "relative_effect": 0.868524301385219,
+        "rr_ci_low": 1.393541407837722,
+        "rr_ci_high": 2.488519956215483,
+        "relative_ci_low": 0.393541407837722,
+        "relative_ci_high": 1.488519956215483,
+        "p_raw": 1.7420794129e-05,
+        "variable": "womens",
+        "level": "1",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "sparse_warning": false,
+        "p_adjusted": 0.000296153500196,
+        "family_size": 28
+      }
+    ],
+    "interactions": [
+      {
+        "statistic": 2.322556007908785,
+        "df": 2,
+        "p_raw": 0.313085800202331,
+        "status": "approximate additive interaction evaluated",
+        "variable": "channel",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 3.388250245652126,
+        "df": 2,
+        "p_raw": 0.183759926087191,
+        "status": "approximate additive interaction evaluated",
+        "variable": "channel",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 1.174975065700696,
+        "df": 2,
+        "p_raw": 0.555721764886791,
+        "status": "approximate additive interaction evaluated",
+        "variable": "recency_band",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 0.456346640801235,
+        "df": 2,
+        "p_raw": 0.795986287216878,
+        "status": "approximate additive interaction evaluated",
+        "variable": "recency_band",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 5.233628639584809,
+        "df": 1,
+        "p_raw": 0.022154267280511,
+        "status": "approximate additive interaction evaluated",
+        "variable": "historical_spend_band",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 0.221542672805107,
+        "family_size": 12
+      },
+      {
+        "statistic": 0.831803428511679,
+        "df": 1,
+        "p_raw": 0.361751566737109,
+        "status": "approximate additive interaction evaluated",
+        "variable": "historical_spend_band",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 0.41649995002508,
+        "df": 1,
+        "p_raw": 0.518688688047923,
+        "status": "approximate additive interaction evaluated",
+        "variable": "newbie",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 6.954791108237096,
+        "df": 1,
+        "p_raw": 0.008359505907323,
+        "status": "approximate additive interaction evaluated",
+        "variable": "newbie",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 0.091954564980554,
+        "family_size": 12
+      },
+      {
+        "statistic": 1.158515657887062,
+        "df": 1,
+        "p_raw": 0.28177359274011,
+        "status": "approximate additive interaction evaluated",
+        "variable": "mens",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 4.80363343339527,
+        "df": 1,
+        "p_raw": 0.028399782204395,
+        "status": "approximate additive interaction evaluated",
+        "variable": "mens",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 0.255598039839554,
+        "family_size": 12
+      },
+      {
+        "statistic": 0.612500464514167,
+        "df": 1,
+        "p_raw": 0.433847891444051,
+        "status": "approximate additive interaction evaluated",
+        "variable": "womens",
+        "treatment": "Men's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 1.0,
+        "family_size": 12
+      },
+      {
+        "statistic": 7.701200870374866,
+        "df": 1,
+        "p_raw": 0.005518409894656,
+        "status": "approximate additive interaction evaluated",
+        "variable": "womens",
+        "treatment": "Women's email",
+        "reference": "Control",
+        "method": "inverse-variance additive risk-difference heterogeneity; exploratory",
+        "p_adjusted": 0.066220918735868,
+        "family_size": 12
+      }
+    ]
+  }
+}

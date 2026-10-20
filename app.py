@@ -19,12 +19,12 @@ def load_data():
 
 st.sidebar.title('ExperimentIQ')
 st.sidebar.caption('A/B Testing & Incremental Revenue Optimization')
-page=st.sidebar.radio('Workspace',['Executive Overview','Treatment Comparison','Customer Segment Explorer','Data Quality & Methodology'])
+page=st.sidebar.radio('Workspace',['Executive Overview','Treatment Comparison','Customer Segment Explorer','Data Quality & Methodology','Statistical Significance','Revenue Uplift Analysis','Segment Effect Explorer','Business Recommendations'])
 st.sidebar.divider()
-st.sidebar.caption('SESSION 1 · DESCRIPTIVE ANALYSIS — Authentic 2008 randomized email experiment. Two-week outcomes.')
+st.sidebar.caption('SESSION 2 · STATISTICAL ANALYSIS — Authentic 2008 randomized email experiment. Two-week outcomes.')
 st.title('Experiment Performance Intelligence')
 st.caption('ExperimentIQ  /  '+page)
-st.info('Observed differences are descriptive. Statistical uncertainty, multiplicity adjustment and rollout recommendations are reserved for Session 2.')
+st.info('Descriptive pages show observed outcomes. Statistical pages add uncertainty and family-specific Holm adjustments. Revenue is not profit; modern rollout needs cost evidence and replication.')
 try:
     df,quality,provenance=load_data()
 except Exception as exc:
@@ -84,7 +84,7 @@ elif page=='Customer Segment Explorer':
         st.dataframe(table,width='stretch',hide_index=True)
         st.dataframe(comparisons(table),width='stretch',hide_index=True)
         export(table,'Download filtered aggregate KPIs','filtered_kpis')
-else:
+elif page=='Data Quality & Methodology':
     st.subheader('Source, integrity and interpretation')
     st.markdown('[Original challenge](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html) · Kevin Hillstrom, MineThatData, March 2008')
     st.json(provenance)
@@ -97,8 +97,12 @@ else:
 
 **Data treatment:** original columns retained; `Surburban` maps to `Suburban` only in a new field. Repeated rows are retained. Row IDs identify source-file positions, not original customers. Missing or invalid data stops analysis.
 
-**Limits:** no original IDs, dates, assignment logs, campaign costs, margins or long-term outcomes. Two-week spend is neither profit nor lifetime value. This historical experiment cannot establish present-day commercial impact. No rollout recommendation yet.""")
+**Limits:** no original IDs, dates, assignment logs, campaign costs, margins or long-term outcomes. Two-week spend is neither profit nor lifetime value. This historical experiment cannot establish present-day commercial impact. Only conditional recommendations are supported; see Business Recommendations.""")
     with st.expander('Descriptive baseline balance'):
         table=balance(df);st.dataframe(table,width='stretch',hide_index=True)
         export(table,'Download baseline balance','baseline_balance')
     st.download_button('Download quality report',json.dumps(quality,indent=2),'quality.json','application/json')
+
+else:
+    from src.statistical_ui import render
+    render(page,df)

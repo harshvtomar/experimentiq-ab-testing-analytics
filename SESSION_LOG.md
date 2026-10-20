@@ -18,3 +18,11 @@
 - Confirmed deployed app at https://experimentiq-ab-testing-analytics.streamlit.app/ . Python version correction succeeded. All four pages rendered; Web filter count matched 28,217 and empty filters produced explanatory state.
 - Browser download events confirmed all five custom exports. Captured live executive screenshot, including recapture on 2026-10-20 continuation.
 - Final documentation/screenshot commit completes Session 1 checkpoint. Its own SHA is available in git history rather than self-referential text. No unverified claims of formal inference or completed four-session project.
+
+## Session 2 — 2026-10-20
+- Continued existing repository; restored runtime dependencies, reran original pipeline and 23 tests successfully.
+- Committed retrospective analysis plan before new inference, SHA `2397f9dfb0f227dbfda728b5a11b89b03b9c3b59`; fixed outcome/families/bins/seed/methods.
+- Added robust binary inference, Holm correction, exact empirical compressed customer bootstrap for means, Welch revenue p-values, subgroup effects and sparse-safe interaction diagnostics.
+- Generated all planned comparisons and a statistical report; no post-hoc endpoint selection, fabricated costs or profitable-rollout claim. No adjusted interaction rejection among 12 tests.
+- Added four pages to existing app, strict JSON/CSV/report exports and canonical AppTest reconciliation. Full local suite: 46 passed in 12.32s, zero failed/skipped.
+- Updated authentic CI job to reproduce the statistical pipeline before integration tests. Hosted delivery verification to follow.
