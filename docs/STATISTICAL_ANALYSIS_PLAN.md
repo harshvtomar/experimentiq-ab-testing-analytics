@@ -1,0 +1,33 @@
+# Retrospective statistical analysis plan — Session 2
+
+Frozen for this session before computing new inferential results. This is NOT preregistration: Session 1 descriptive outcomes have already been inspected. Do not change the primary endpoint after seeing p-values.
+
+## Population, estimands and design
+Use all 64,000 checksum-verified source rows in their supplied randomized arms. Retain repeated observations; position IDs only prevent computational double counting, not verify identity. No original randomization logs or compliance data exist. Estimate assignment effects under the source's randomization claim, consistency and no interference. Inference assumes independent customer rows. Outcomes cover two weeks, not lifetime value or profit.
+
+Conversion is primary. Visit and spend per assigned customer (including zeros) are secondary. Primary contrasts are men's email minus no-email control and women's email minus control. Men's minus women's email is exploratory. Tests are two-sided, alpha=0.05. Report all planned comparisons regardless of results.
+
+## Binary methods and multiplicity
+Use two-sided Fisher exact tests for both binary endpoints for consistency across full data and rare/small cells. Report counts, n, rates, raw rate difference, percentage-point difference, raw risk ratio and relative uplift. Absolute-effect 95% pointwise CIs use Newcombe's independent Wilson-score construction (no continuity correction). Relative-effect intervals use log risk-ratio intervals with 0.5 added to event counts and 1 added to denominators in both arms; label them approximate and continuity-adjusted, especially in sparse data. Raw RR remains undefined if reference events are zero; no artificial finite raw effect is substituted. Empty arms are non-estimable, not evidence of no effect.
+
+Holm families: (1) primary conversion vs control, two tests; (2) secondary visit vs control, two tests; (3) secondary revenue vs control, two tests; (4) exploratory email-versus-email across conversion, visit and spend, three tests. There is no claim of global family-wise error control across these separate families. CIs are pointwise 95%, not Holm-adjusted; adjusted p-values govern family-specific rejection. Fisher tests and score CIs need not invert exactly.
+
+## Revenue
+Mean spend differences use every assigned row. Independently bootstrap customers with replacement within each arm, fixed original arm sizes, 10,000 replications, seed 20261020 with independent spawned streams per arm. For efficient exact empirical mean resampling, aggregate identical spend values ONLY into empirical frequencies and draw multinomial multiplicities with probabilities frequency/n. This is distributionally equivalent to sampling n individual customer rows with replacement, including zero spend; it does not sample each unique spend with equal weight or drop repeats.
+
+Use 2.5th/97.5th percentiles of bootstrap differences as pointwise intervals. Export distribution summaries and a 100-bin aggregate histogram, not customer-level data. Compare CI endpoints in each 5,000-draw half against full-run endpoints; report maximum drift / full interval width, flag above 10%. Do not change seeds to seek favorable results. Record runtime and bootstrap mean standard error against the analytic independent-means SE. This is a Monte Carlo diagnostic, not a guarantee of coverage.
+
+For transparent raw/adjusted revenue p-values, use a separate two-sided Welch unequal-variance mean test (large-sample approximation, sensitive to heavy tails), not a fraction of bootstrap draws above/below zero mislabeled as a null p-value. Include zero mass, positive count, p95/p99/max and concentration diagnostics. Constant samples may yield degenerate bootstrap distributions; label that limitation, with no automatic population-certainty interpretation.
+
+## Fixed exploratory segments
+Conversion only: historical channel; recency bands 1–3, 4–6, 7–12 months; historical spend <=$200 / >$200; newbie; historical mens; historical womens. These bins are selected before Session 2 inference. Do not use outcomes for segmentation. Report both treatments against control for every category (28 tests) with Holm over the full subgroup family; undefined tests count conservatively as p=1 for adjustment but remain undefined in output. No selected subgroup is a validated target.
+
+For each of six segment variables and two treatments (12 tests), use an approximate omnibus Wald heterogeneity statistic on category-specific risk differences: inverse-variance weighted squared deviations from the common difference, chi-square k-1. Categories are disjoint within a variable. Require all categories to have n>=100 per arm and at least 5 events and 5 non-events in both arms; otherwise mark interaction not evaluated. Apply Holm across all 12 planned interaction tests, treating unavailable tests conservatively as p=1. The scale is additive risk difference, not odds ratio. Do not infer an interaction from different subgroup significance labels. Overlapping segment variables and retrospective selection limit interpretation.
+
+## Practical importance and recommendations
+Translate rate effects into estimated additional conversions per 1,000 assignments with pointwise intervals. Report dollars per assigned customer. No cost, gross margin, capacity or business-approved minimum effect is available, so economic meaningfulness is undetermined; do not invent a profitable-rollout threshold. A positive adjusted primary result supports further consideration and a contemporary replication with costs measured, not unconditional rollout. Revenue evidence and subgroup results are secondary/exploratory. Preserve negative and inconclusive findings.
+
+## Verification and outputs
+Regression-test the existing pipeline; independently verify binary CIs against statsmodels, Holm against a reference implementation, Fisher examples, empty/zero-event and extreme revenue fixtures, exact bootstrap moments, seed reproducibility and real-data counts/KPI equality. Run all old/new pages through AppTest, then real-browser checks on the existing deployment. Export canonical CSV/strict JSON, a generated Markdown statistical report and reproducibility metadata including source and plan hashes. Keep source customer rows outside Git. Record deviations explicitly before changing planned methods.
+
+References: https://www.statsmodels.org/stable/generated/statsmodels.stats.proportion.confint_proportions_2indep.html ; https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.fisher_exact.html ; https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html
