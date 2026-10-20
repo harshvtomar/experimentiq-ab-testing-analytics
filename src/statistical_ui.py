@@ -19,7 +19,7 @@ def forest(table,multiplier=1,unit='dollars per assigned customer',label='compar
         array=(table.ci_high-table.effect)*multiplier,arrayminus=(table.effect-table.ci_low)*multiplier),
         hovertemplate='%{y}<br>Effect: %{x:.4f}<extra></extra>'))
     fig.add_vline(x=0,line_dash='dash',line_color='#61758a')
-    fig.update_layout(xaxis_title=f'Effect ({unit}) · 95% pointwise interval',yaxis_title=None,
+    fig.update_layout(xaxis_title=f'Effect ({unit}) · 95% pointwise interval',yaxis_title=None,yaxis_type='category',
                       height=max(320,75*len(table)),margin=dict(l=10,r=25,t=20,b=50))
     st.plotly_chart(fig,width='stretch')
 

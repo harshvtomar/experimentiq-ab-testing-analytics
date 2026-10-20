@@ -26,3 +26,10 @@
 - Generated all planned comparisons and a statistical report; no post-hoc endpoint selection, fabricated costs or profitable-rollout claim. No adjusted interaction rejection among 12 tests.
 - Added four pages to existing app, strict JSON/CSV/report exports and canonical AppTest reconciliation. Full local suite: 46 passed in 12.32s, zero failed/skipped.
 - Updated authentic CI job to reproduce the statistical pipeline before integration tests. Hosted delivery verification to follow.
+
+### Session 2 delivery
+- Published implementation as c582909b345d29e0ca1ed79ba478f4b26f2187b9. Hosted run 39378714645 passed: 39 unit and 7 authentic integration tests, with real source acquisition and inference regeneration.
+- Verified all eight pages on the existing public deployment; exercised outcome/bootstrap/subgroup selectors and completed all six new download controls. Saved statistical screenshot. Fixed binary subgroup plot axis to categorical after visual review.
+- NEXT_SESSION_PROMPT.md now continues Session 3 economics, Excel and technically supported Power BI work, preserving established statistical evidence and uncertainty. No costs, margins or profit claims invented.
+
+- Final local verification after categorical-axis fix: `EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q --junitxml=reports/test-results.xml` — **46 passed in 11.55s**, zero failures/skips.

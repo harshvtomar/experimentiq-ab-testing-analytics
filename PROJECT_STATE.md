@@ -1,4 +1,4 @@
-# ExperimentIQ — Session 2 implementation checkpoint
+# ExperimentIQ — Session 2 delivery checkpoint
 Repository: https://github.com/harshvtomar/experimentiq-ab-testing-analytics (main)
 Live: https://experimentiq-ab-testing-analytics.streamlit.app/
 
@@ -31,6 +31,6 @@ Continue using NEXT_SESSION_PROMPT.md; inspect latest main before editing. Do no
 
 ## Session 2 current state
 Retrospective plan committed before calculations (`2397f9d`). Binary Fisher/Newcombe/RR inference, four outcome-level Holm families plus subgroup and interaction families, 10,000-replication revenue bootstrap and separate Welch p-values implemented. Fixed 28 subgroup contrasts and 12 approximate additive interaction tests implemented. No adjusted interaction rejection; no targeting-winner claim.
-Eight dashboard pages preserve the original four. Canonical inference exports and generated report in reports/session2. Local full suite: 46 passed, zero failed/skipped. Hosted Session 2 CI/browser verification pending at this implementation checkpoint; docs/QA.md records subsequent results.
+Eight dashboard pages preserve the original four. Canonical inference exports and generated report in reports/session2. Local full suite: 46 passed, zero failed/skipped. Implementation commit c582909b345d29e0ca1ed79ba478f4b26f2187b9 passed hosted CI run 39378714645: 39 unit and 7 authentic-data integration tests. All eight live pages opened; all six new downloads completed and outcome/bootstrap/subgroup controls were exercised. See docs/QA.md. Final checkpoint adds a categorical-axis display fix, screenshot and verification documentation.
 
 Session 2 results: primary conversion differences +0.6805 pp (men) and +0.3111 pp (women), both Holm-significant; revenue point estimates +$0.7698 and +$0.4244 per assigned customer. CIs are pointwise; missing costs/margins prohibit profit claims. Original randomization logs and IDs remain unavailable. Raw records remain outside Git.

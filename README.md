@@ -1,7 +1,7 @@
 # ExperimentIQ
 ### A/B Testing & Incremental Revenue Optimization
 
-A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Session 2 delivered locally**: binary-outcome inference, declared Holm families, 10,000-replication customer bootstrap, exploratory subgroup interactions and eight interactive Streamlit pages. Hosted verification is recorded in docs/QA.md.
+A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Session 2 delivered and live-verified**: binary-outcome inference, declared Holm families, 10,000-replication customer bootstrap, exploratory subgroup interactions and eight interactive Streamlit pages. Hosted verification is recorded in docs/QA.md.
 
 ## Business question
 Which merchandise email, if any, should a retailer consider deploying to improve purchasing and revenue? Conversion is primary; website visits and two-week spend per assigned customer are secondary. All three experimental arms remain distinct.
@@ -62,11 +62,11 @@ No original customer IDs, timestamps, assignment logs, costs, margins or lifetim
 ## Live dashboard and verification
 [Open ExperimentIQ](https://experimentiq-ab-testing-analytics.streamlit.app/) — deployed to Streamlit Community Cloud, Python 3.12, branch `main`, entry point `app.py`.
 
-All four pages were opened in a real browser. The Web-only filter returned 28,217 customers, independently matching Python. Clearing all channels produced the expected no-data state. All five custom download controls completed: arm KPIs, comparisons, filtered KPIs, baseline balance and quality report. The numerical tables are additionally verified through AppTest and SQL reconciliation. Browser downloads were observed completing; downloaded bytes on the user's computer were not re-read.
+At the Session 1 checkpoint, all four original pages were opened in a real browser. The Web-only filter returned 28,217 customers, independently matching Python. Clearing all channels produced the expected no-data state. All five custom download controls completed: arm KPIs, comparisons, filtered KPIs, baseline balance and quality report. The numerical tables are additionally verified through AppTest and SQL reconciliation. Browser downloads were observed completing; downloaded bytes on the user's computer were not re-read.
 
 ![Verified live executive overview](screenshots/executive-overview.png)
 
-Session 1 tests: **23 passed, 0 failed, 0 skipped** (historical checkpoint). [Verified CI on the latest application-code commit](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651): both jobs passed. The final checkpoint changes documentation/screenshots only. See [QA evidence](docs/QA.md) and [Session 2 prompt](NEXT_SESSION_PROMPT.md).
+Session 1 tests: **23 passed, 0 failed, 0 skipped** (historical checkpoint). [Historical Session 1 CI](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651): both jobs passed. The final checkpoint changes documentation/screenshots only. See [QA evidence](docs/QA.md) and [Session 3 prompt](NEXT_SESSION_PROMPT.md).
 
 ## Session 2 statistical results
 The retrospective analysis plan was committed as `2397f9dfb0f227dbfda728b5a11b89b03b9c3b59` before Session 2 inference. It is not preregistration: descriptive outcomes were already known.
@@ -81,3 +81,12 @@ Binary tests: two-sided Fisher; risk-difference intervals: Newcombe/Wilson. Each
 No planned interaction remains significant after Holm across 12 tests; do not infer validated subgroup targets. These historical assignment effects support consideration of contemporary replication. Costs and margins remain absent, so economic meaningfulness and profitable rollout are undetermined.
 
 **Reproduction:** `python -m src.statistical_pipeline` generates [strict JSON](reports/session2/inferential_results.json), CSV tables, bootstrap diagnostics and [the statistical report](reports/session2/STATISTICAL_REPORT.md). Seed 20261020, 10,000 customer bootstrap replications, including all zero-spend observations. Full local test suite: **46 passed, 0 failed, 0 skipped**. See [QA evidence](docs/QA.md).
+
+## Session 2 hosted verification
+Implementation commit `c582909b345d29e0ca1ed79ba478f4b26f2187b9`: [GitHub Actions run 39378714645](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39378714645) passed both jobs, with 39 unit and 7 authentic-data integration tests. The hosted job acquired the pinned original data and reproduced inference.
+
+All eight pages opened on the existing live app. Outcome selection, bootstrap comparison selection and both subgroup controls updated their charts; all six new custom downloads completed. No downloaded browser file bytes were independently reread. Numerical payloads are checked by canonical integration tests.
+
+![Verified live statistical significance page, visit endpoint](screenshots/statistical-significance.png)
+
+Continue with [the Session 3 prompt](NEXT_SESSION_PROMPT.md) for explicit economics assumptions, Excel reporting and supported Power BI integration.
