@@ -9,3 +9,16 @@ Environment: Python 3.12. Dependencies pinned in requirements.txt to the install
 - Streamlit deployment initiated. Setup-form selection did not persist; hosted settings showed Python 3.14. Changed the settings control to Python 3.12 with keyboard selection, verified Selected 3.12, and saved. Browser verification pending build completion.
 
 Synthetic rows exist only in tests/conftest.py and never feed project findings. Integration requires the original pinned file; CI sets EXPERIMENTIQ_REQUIRE_DATA=1 so missing real data fails.
+
+## Completed delivery verification
+- Final application-code commit: `cd20f34cba6e035faf28225fd79e5f4d303c80b0`. Local suite after narrow-screen label fixes: **23 passed in 7.27s**, 0 failures, 0 skips (`python -m pytest -q --junitxml=reports/test-results.xml`).
+- Hosted CI for that commit: run 39309754651 completed successfully; https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651 . Earlier detailed logs verify the 20-unit/3-integration split; test sources did not change in the UI commit.
+- Live app: https://experimentiq-ab-testing-analytics.streamlit.app/ . Hosted settings saved as Python 3.12. All four pages opened in the connected Chrome browser and genuine Plotly charts rendered. The app downloaded original bytes matching the source pin; hosted provenance was visible on the methodology page.
+- Executive Overview displayed 64,000 customers, 3 arms and $67,258.13 observed spend. Screenshot captured after fixing narrow-screen clipped metric values/titles and recaptured on continuation (2026-10-20).
+- Treatment Comparison rendered three comparisons and charts.
+- Customer Segment Explorer: removed Multichannel and Phone; Web-only count was 28,217, matching an independent pandas calculation. Removed Web as well; count became 0 with the intended explanatory warning. No exception was displayed.
+- Data Quality & Methodology rendered source manifest, completeness, validity, SRM and explanatory limits; expanded baseline balance successfully.
+- All five custom downloads completed in the browser: arm_kpis CSV, comparisons CSV, filtered_kpis CSV, baseline_balance CSV and quality JSON. Filenames were returned by download events. Local downloaded bytes were not read back; corresponding numerical payloads are tested through canonical tables and pipeline exports.
+- An initial download wait timed out; reconnected and used paired event/click operations to confirm completion. This was a browser automation recovery, not an application-code defect.
+- A standalone urllib request encountered Streamlit redirects; do not cite that request as HTTP-200 validation. Deployment acceptance is based on actual interactive browser rendering.
+- Final checkpoint adds docs/screenshots only; verify its own Actions run from the repository after publication. No additional application tests are claimed beyond the runs above.

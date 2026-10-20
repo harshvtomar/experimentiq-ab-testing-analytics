@@ -10,6 +10,9 @@ Authentic original Hillstrom 64,000-row, 12-column CSV, SHA-256 0e5893329d8b93ce
 
 Python modules cover retrieval, validation, normalization, KPIs, filters, baseline balance, SRM, SQLite and exports. SQL schema and 12 queries independently reconcile all eight numeric arm KPI fields. Four Streamlit pages work with canonical functions. Latest initial local checkpoint: 23 tests passed including authentic integration and dashboard AppTest; consult QA for subsequent results. No formal outcome testing, confidence intervals or validated rollout decision was implemented in Session 1.
 
+## Delivery verified before this handoff
+Live app: https://experimentiq-ab-testing-analytics.streamlit.app/ (Python 3.12, main, app.py). All four pages, Web-only and empty-channel filters, and all five custom downloads were verified in a real browser. Latest application-code commit: cd20f34cba6e035faf28225fd79e5f4d303c80b0; CI run 39309754651 passed. The final Session 1 checkpoint adds documentation/screenshots. Latest local suite: 23 passed, zero failures/skips. Always inspect remote main for the final checkpoint SHA.
+
 ## Session 2 objectives
 1. Define a retrospective analysis plan before computing inferential results: conversion primary; visit/spend secondary; each email versus control as primary treatment contrasts; explicitly classify email-versus-email. Define correction families and practical decision thresholds without claiming preregistration.
 2. Implement tested binary-outcome inference and absolute/relative effect estimates with appropriate confidence intervals and documented small/zero-cell behavior. Report n and event counts. Do not label p-values as probability the null is true.

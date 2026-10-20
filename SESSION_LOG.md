@@ -12,3 +12,9 @@
 - Local Git push lacked CLI credentials. Published the exact tracked tree via the connected GitHub Git-data API with a checked expected main SHA; no token requested. Foundation remote commit: `9f3f98db4c9fc74279bb7479710baad09b98204c`. Fetched remote and synchronized local main; verified a clean worktree before delivery additions.
 - Hosted CI run 39308327718 passed: 20 unit tests, 3 real-data integration tests; authentic acquisition succeeded.
 - Streamlit deployment configuration initially retained Python 3.14 despite setup selection. Corrected saved app settings to Python 3.12; build verification in progress.
+
+## Completed deployment and continuation checkpoint
+- Application readability revision published as `cd20f34cba6e035faf28225fd79e5f4d303c80b0`; hosted CI run 39309754651 passed. Local tests: 23 passed in 7.27s, zero failed/skipped.
+- Confirmed deployed app at https://experimentiq-ab-testing-analytics.streamlit.app/ . Python version correction succeeded. All four pages rendered; Web filter count matched 28,217 and empty filters produced explanatory state.
+- Browser download events confirmed all five custom exports. Captured live executive screenshot, including recapture on 2026-10-20 continuation.
+- Final documentation/screenshot commit completes Session 1 checkpoint. Its own SHA is available in git history rather than self-referential text. No unverified claims of formal inference or completed four-session project.

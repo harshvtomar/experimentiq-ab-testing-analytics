@@ -58,4 +58,11 @@ No original customer IDs, timestamps, assignment logs, costs, margins or lifetim
 3. **Session 3:** explicit economics scenarios, Excel executive reporting and Power BI integration where available.
 4. **Session 4:** final QA, deployment refinement and portfolio case study.
 
-Screenshots and verified live deployment will be linked only after actual browser checks; none are represented by mockups.
+## Live dashboard and verification
+[Open ExperimentIQ](https://experimentiq-ab-testing-analytics.streamlit.app/) — deployed to Streamlit Community Cloud, Python 3.12, branch `main`, entry point `app.py`.
+
+All four pages were opened in a real browser. The Web-only filter returned 28,217 customers, independently matching Python. Clearing all channels produced the expected no-data state. All five custom download controls completed: arm KPIs, comparisons, filtered KPIs, baseline balance and quality report. The numerical tables are additionally verified through AppTest and SQL reconciliation. Browser downloads were observed completing; downloaded bytes on the user's computer were not re-read.
+
+![Verified live executive overview](screenshots/executive-overview.png)
+
+Local tests: **23 passed, 0 failed, 0 skipped**. [Verified CI on the latest application-code commit](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651): both jobs passed. The final checkpoint changes documentation/screenshots only. See [QA evidence](docs/QA.md) and [Session 2 prompt](NEXT_SESSION_PROMPT.md).
