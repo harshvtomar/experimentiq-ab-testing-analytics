@@ -105,3 +105,5 @@ Demonstration only: 10,000 customers, 40% margin, $0.05 delivery/customer, $500 
 Local suite: **70 passed**, zero failed/skipped. Python/SQL reconciliation covers 11 economic fields. Workbook reopened and recalculated in Artifact Tool and LibreOffice; native Microsoft Excel remains unverified. Hosted Session 3 CI passed 60 unit and 10 authentic integration tests. The live simulator, input changes and all three new downloads were verified in Chrome; see docs/QA.md.
 
 ![Excel executive dashboard](screenshots/excel-business-dashboard.png)
+
+![Verified live economics simulator](screenshots/economics-simulator.png)

@@ -22,3 +22,5 @@ Baseline 46 tests passed. Expanded local suite 70 passed in 15.20s, zero failure
 ## Remaining limits and Session 4
 No observed costs, margins or profits. Scenario outputs are conditional on supplied assumptions; interval excludes modern-market transfer and commercial uncertainty. Source host availability is a dependency; preserve verified cache plus manifest. Raw redistribution permission remains unresolved. Power BI Desktop requires a supported Windows session to create/validate a .pbix; native Microsoft Excel requires an available Excel session.
 Session 4: final end-to-end QA, UI refinement, executive portfolio case study, GitHub presentation and honest resume bullets; inspect and continue existing work. Do not rebuild or change statistical evidence to improve appearances. NEXT_SESSION_PROMPT.md is ready.
+
+Final code checkpoint: 7b999dec7efad0d79e60ce4333f4085df1c3c6a1, hosted run 39600063982 passed. Local final regression 70 passed in 14.65s. Live currency-caption correction verified; screenshot saved. Later docs-only checkpoint does not change runtime behavior.
