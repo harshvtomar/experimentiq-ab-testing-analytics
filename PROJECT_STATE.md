@@ -34,3 +34,5 @@ Workbook fully regenerated in a disposable directory; changed-input/reopen evide
 
 ## Maintenance, not another mandatory development session
 `NEXT_SESSION_PROMPT.md` now describes maintenance and optional improvements. Preserve this repository and existing app. Remaining optional verification requires a native Excel session and a Windows Power BI Desktop session. Contemporary business recommendations require a new experiment with observed costs/margins and operational guardrails. Raw redistribution requires explicit rights clarification. No achieved commercial benefits are claimed.
+
+Portfolio publication: `b856753aec3a86aa180c90fc830f0375ba99d56e`; hosted run 39669945810 passed 64 unit + 11 authentic integration tests. PDF/screenshots verified against fetched remote blobs. Live app reloaded successfully after publication. A subsequent documentation-only acceptance commit may be the latest main SHA; inspect remote main for that exact revision.

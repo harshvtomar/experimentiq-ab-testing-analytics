@@ -88,6 +88,6 @@ Validated 64,000 rows and 12 original fields; no missing or invalid values found
 No explicit redistribution permission was established: raw/customer-level files and SQLite remain outside Git. There are no original assignment logs, timestamps, observed campaign costs, margins or lifetime outcomes. Historical two-week results cannot establish present-day profitability. Source-host availability is a reproduction dependency.
 
 ## Verification and maintenance
-Session 4 final local regression: **75 passed, 0 failed, 0 skipped**. Published application fixes passed [CI run 39601927562](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39601927562): 64 unit + 11 authentic integration tests. [QA record](docs/QA.md) distinguishes local, browser, hosted and native-tool verification.
+Session 4 final local regression: **75 passed, 0 failed, 0 skipped**. Final portfolio publication passed [CI run 39669945810](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39669945810): 64 unit + 11 authentic integration tests. [QA record](docs/QA.md) distinguishes local, browser, hosted and native-tool verification.
 
 Start with [project state](PROJECT_STATE.md), [session log](SESSION_LOG.md) and [maintenance guidance](NEXT_SESSION_PROMPT.md). The four-session portfolio scope is delivered with the native Excel/Power BI limitations stated above; optional future work must preserve existing validated findings.

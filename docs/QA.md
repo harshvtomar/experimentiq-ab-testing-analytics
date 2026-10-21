@@ -117,3 +117,10 @@ One checkbox automation `check()` did not change state; DOM inspection confirmed
 
 ## Remaining limits
 No known unresolved regression failure. Native Microsoft Excel and native Power BI verification require their supported application environments. Raw redistribution permission remains unresolved. Economics remains hypothetical; modern rollout needs a contemporary experiment and measured commercial inputs.
+
+## Portfolio publication acceptance
+Portfolio commit `b856753aec3a86aa180c90fc830f0375ba99d56e` reached remote main and was fetched locally. The PDF and all five Session 4 screenshot files match remote Git blobs byte-for-byte; local worktree was clean.
+
+[Hosted run 39669945810](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39669945810) completed successfully. Actual logs: unit job 119464859719 **64 passed, 11 deselected in 1.78s**; authentic job 119464860085 **11 passed, 64 deselected in 16.99s**. Original acquisition and all pipeline steps succeeded. No failures/skips.
+
+After publication, reloaded the existing live application in Chrome and verified the rendered overview retained 64,000 participants, three arms and 67,258.13 observed spend. The earlier full live traversal covered the unchanged application code. This acceptance note is documentation-only; its subsequent commit does not change executable behavior or analytical artifacts.
