@@ -7,6 +7,7 @@ import importlib.metadata
 from pathlib import Path
 import pandas as pd
 from src.config import ROOT,EXPECTED_ROWS,EXPECTED_SHA256
+from src.serialization import table_bundle
 from src.download import retrieve,load_raw
 from src.validate import validate
 from src.preprocess import normalize
@@ -41,7 +42,7 @@ def markdown_report(tables,meta):
             lines.append(f'|{x.outcome}: {x.comparison}|{x.effect*mult:.4f} {unit}|[{x.ci_low*mult:.4f}, {x.ci_high*mult:.4f}]|{x.p_raw:.6g}|{x.p_adjusted:.6g}|{x.family}|')
     lines += ['','Conversion effects expressed per 1,000 assigned customers:']
     for x in b[b.family=='primary_conversion'].itertuples():
-        lines.append(f'- {x.comparison}: {x.effect*1000:.2f} additional conversions per 1,000 (pointwise 95% CI {x.ci_low*1000:.2f} to {x.ci_high*1000:.2f}); relative uplift {x.relative_effect*100:.2f}% (approximate adjusted log-RR interval {x.relative_ci_low*100:.2f}% to {x.relative_ci_high*100:.2f}%).')
+        lines.append(f'- {x.comparison}: {x.effect*1000:.2f} additional conversions per 1,000 (pointwise 95% CI {x.ci_low*1000:.2f} to {x.ci_high*1000:.2f}); relative uplift {x.relative_effect*100:.2f}% (approximate continuity-adjusted log-RR interval {x.relative_ci_low*100:.2f}% to {x.relative_ci_high*100:.2f}%).')
     lines += ['','### 3. Is it economically meaningful?',
               'Economic value is undetermined. Revenue is not profit. No delivery costs, contribution margin, capacity constraints or business-approved minimum effect are supplied. The estimated revenue difference is per assigned customer over two weeks, not a forecast for future customers.',
               '', '## Conditional recommendation',
@@ -76,8 +77,8 @@ def run(root=ROOT,reps=REPLICATIONS,seed=SEED):
     out=root/'reports/session2';out.mkdir(parents=True,exist_ok=True)
     for name,table in tables.items():table.to_csv(out/f'{name}.csv',index=False)
     (out/'metadata.json').write_text(json.dumps(meta,indent=2,allow_nan=False))
-    # pandas converts non-estimable NaN to JSON null, not nonstandard NaN literals.
-    payload={name:json.loads(table.to_json(orient='records',double_precision=15)) for name,table in tables.items()}
+    # Preserve tiny p-values; map unavailable values to strict JSON null.
+    payload=table_bundle(tables)
     (out/'inferential_results.json').write_text(json.dumps({'metadata':meta,'results':payload},indent=2,allow_nan=False))
     (out/'STATISTICAL_REPORT.md').write_text(markdown_report(tables,meta))
     return tables,meta

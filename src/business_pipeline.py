@@ -17,7 +17,8 @@ def reconcile_economics(table):
         sql=pd.read_sql_query((ROOT/'sql/economics.sql').read_text(),con)
     py=table.set_index('treatment');sql=sql.set_index('treatment')
     for col in sql:
-        np.testing.assert_allclose(sql[col],py.loc[sql.index,col],rtol=1e-12,atol=1e-9,equal_nan=True)
+        # An entirely undefined SQL column is object/None, not numeric NaN.
+        np.testing.assert_allclose(sql[col].astype(float),py.loc[sql.index,col].astype(float),rtol=1e-12,atol=1e-9,equal_nan=True)
     return {'status':'passed','fields':list(sql.columns),'absolute_tolerance':1e-9}
 
 def run(root=ROOT):

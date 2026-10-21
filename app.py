@@ -1,4 +1,4 @@
-"""Streamlit MVP. Every chart uses the same validated, checksum-pinned source."""
+"""Streamlit reporting application. Every chart uses the same validated, checksum-pinned source."""
 import json
 import pandas as pd
 import plotly.express as px
@@ -10,7 +10,7 @@ from src.preprocess import normalize,filter_customers
 from src.metrics import aggregate,comparisons,integrity,balance
 
 st.set_page_config(page_title='ExperimentIQ | Experiment Performance Intelligence',page_icon='🧪',layout='wide')
-st.markdown('<style>.block-container{max-width:1300px;padding-top:2rem}h1{letter-spacing:-1px}div[data-testid="stMetric"]{background:#f0f5fa;border-radius:12px;padding:16px}div[data-testid="stMetricValue"]{font-size:1.65rem}</style>',unsafe_allow_html=True)
+st.markdown('<style>.block-container{max-width:1300px;padding-top:4rem}h1{letter-spacing:-1px;font-size:clamp(1.8rem,3vw,2.6rem)}div[data-testid="stMetricLabel"] p{white-space:normal;overflow:visible;text-overflow:clip}div[data-testid="stMetric"]{background:#f0f5fa;border-radius:12px;padding:16px}div[data-testid="stMetricValue"]{font-size:1.65rem}</style>',unsafe_allow_html=True)
 @st.cache_data(show_spinner='Verifying original experiment data…')
 def load_data():
     path=retrieve(ROOT/'data/raw')
@@ -21,8 +21,9 @@ st.sidebar.title('ExperimentIQ')
 st.sidebar.caption('A/B Testing & Incremental Revenue Optimization')
 page=st.sidebar.radio('Workspace',['Executive Overview','Treatment Comparison','Customer Segment Explorer','Data Quality & Methodology','Statistical Significance','Revenue Uplift Analysis','Segment Effect Explorer','Business Recommendations','Business Economics & ROI Simulator'])
 st.sidebar.divider()
-st.sidebar.caption('SESSION 3 · BUSINESS ECONOMICS — Authentic 2008 experiment. Two-week outcomes; commercial scenarios are hypothetical.')
-st.title('Experiment Performance Intelligence')
+st.sidebar.caption('HISTORICAL EXPERIMENT · Authentic 2008 experiment. Two-week outcomes; commercial scenarios are hypothetical.')
+st.title('ExperimentIQ')
+st.caption('Experiment Performance Intelligence')
 st.caption('ExperimentIQ  /  '+page)
 st.info('Descriptive pages show observed outcomes. Statistical pages add uncertainty and family-specific Holm adjustments. Revenue is not profit; modern rollout needs cost evidence and replication.')
 try:

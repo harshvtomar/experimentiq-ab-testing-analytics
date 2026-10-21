@@ -53,6 +53,10 @@ def test_machine_exports(actual):
     payload=json.loads((ROOT/'reports/session2/inferential_results.json').read_text(),parse_constant=lambda x:pytest.fail('Nonstandard JSON constant'))
     assert payload['metadata']['checks']['n']==64000
     assert len(payload['results']['binary'])==6
+    for actual, expected in zip(payload['results']['binary'],tables['binary'].to_dict('records')):
+        assert actual['p_raw']==expected['p_raw']
+        assert actual['p_adjusted']==expected['p_adjusted']
+        assert actual['effect']==expected['effect']
     assert 'Economic value is undetermined' in (ROOT/'reports/session2/STATISTICAL_REPORT.md').read_text()
 
 def test_new_pages_use_canonical_calculations(actual,calculated):

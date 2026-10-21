@@ -21,8 +21,8 @@ This is a retrospective analysis of the 2008 Hillstrom randomized email experime
 |spend: Men's email minus Women's email|0.3454 $/customer|[0.0291, 0.6569]|0.0304687|0.0304687|exploratory_email_comparison|
 
 Conversion effects expressed per 1,000 assigned customers:
-- Men's email minus Control: 6.81 additional conversions per 1,000 (pointwise 95% CI 5.01 to 8.64); relative uplift 118.84% (approximate adjusted log-RR interval 76.47% to 170.19%).
-- Women's email minus Control: 3.11 additional conversions per 1,000 (pointwise 95% CI 1.50 to 4.75); relative uplift 54.33% (approximate adjusted log-RR interval 22.88% to 93.27%).
+- Men's email minus Control: 6.81 additional conversions per 1,000 (pointwise 95% CI 5.01 to 8.64); relative uplift 118.84% (approximate continuity-adjusted log-RR interval 76.47% to 170.19%).
+- Women's email minus Control: 3.11 additional conversions per 1,000 (pointwise 95% CI 1.50 to 4.75); relative uplift 54.33% (approximate continuity-adjusted log-RR interval 22.88% to 93.27%).
 
 ### 3. Is it economically meaningful?
 Economic value is undetermined. Revenue is not profit. No delivery costs, contribution margin, capacity constraints or business-approved minimum effect are supplied. The estimated revenue difference is per assigned customer over two weeks, not a forecast for future customers.
@@ -43,7 +43,7 @@ Percentile 95% intervals are accompanied by separate Welch approximate mean-test
 |Women's email minus Control|0.13134|0.13033|0.619%|False|
 |Men's email minus Women's email|0.16093|0.15962|1.185%|False|
 
-Inference calculation time in this run: 1.122 seconds. Monte Carlo stability does not establish nominal coverage under every heavy-tailed population.
+Inference calculation time in this run: 1.136 seconds. Monte Carlo stability does not establish nominal coverage under every heavy-tailed population.
 
 ## Segment exploration
 Fixed pre-treatment partitions: channel, recency bands, history <=$200/>$200, newbie and two historical merchandise indicators. Segment effects are exploratory with Holm across 28 tests. All 12 planned interaction tests share a separate Holm family. Interaction is evaluated on the additive risk-difference scale with sparse-cell safeguards; it is not inferred from a difference in subgroup significance.

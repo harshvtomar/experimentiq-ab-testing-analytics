@@ -3,7 +3,7 @@
   "plan_sha256": "012c8a5941f479affcedbde709d0649157e3a7be66e72d3b4848779a212c3bf0",
   "bootstrap_reps": 10000,
   "seed": 20261020,
-  "runtime_seconds": 1.122,
+  "runtime_seconds": 1.136,
   "python": "3.12.14",
   "packages": {
     "numpy": "2.3.5",
