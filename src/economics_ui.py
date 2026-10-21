@@ -34,7 +34,7 @@ def render(df):
     a.metric('Incremental revenue',f'${selected.revenue:,.2f}')
     b.metric('Net campaign contribution',f'${selected.net_value:,.2f}')
     c.metric('Scenario',selected.classification.title())
-    st.caption(f'Conditional transformed pointwise interval: ${selected.net_low:,.2f} to ${selected.net_high:,.2f}. This is not a prediction interval for a future campaign.')
+    st.caption(f'Conditional transformed pointwise interval: USD {selected.net_low:,.2f} to USD {selected.net_high:,.2f}. This is not a prediction interval for a future campaign.')
     st.dataframe(table,hide_index=True,width='stretch')
     st.caption('Control is an incremental zero baseline with no campaign costs. Negative maximum affordable delivery cost means even free delivery cannot cover setup at the assumed margin. Break-even margin above 100% is infeasible. Undefined ratios remain blank.')
     fig=px.bar(table,x='treatment',y='net_value',color='treatment',title='Hypothetical net contribution by intervention',labels={'net_value':'Net contribution ($)','treatment':'Intervention'})

@@ -41,3 +41,10 @@
 - Built seven-sheet Excel workbook using Artifact Tool with editable formulas and three native charts. Boundary tests caught/fixed zero-versus-blank handling. Seven renders inspected; reopened workbook and LibreOffice recalculation checked. Microsoft Excel and Power BI Desktop remain unverified.
 - Full local suite: 70 passed in 15.20s, no failures/skips. Power BI package has explicit unexecuted DAX/native-report limitations.
 - Updated Session 4 prompt and documentation; remote/hosted verification recorded after publication.
+
+### Session 3 hosted acceptance — 2026-10-21
+- Implementation commit c64133e894e136fa4daecf9e564c1da8dcc57410 reached remote main. Actions run 39562622600 succeeded: unit job 119097224402 **60 passed, 10 deselected in 1.44s**; authentic job 119097224143 **10 passed, 60 deselected in 15.27s**. Acquisition, statistical regeneration and economics SQL reconciliation succeeded before integration tests. No skips/failures.
+- Existing Streamlit app was asleep; woke it using its public control and verified Executive Overview (64,000 participants; $67,258.13 observed spend) and the ninth economics page in connected Chrome.
+- Opt-in disabled state correctly withheld an economic conclusion. Demonstration men's net $2,079.31; increasing audience to 20,000 gave $4,658.62; zero audience gave −$500.00. Restoring 10,000 and selecting women's email gave $697.65 with conditional range −$323.86 to $1,723.82. Results match the canonical arithmetic.
+- All three download events completed: ExperimentIQ_Current_Scenario.csv, ExperimentIQ_Sensitivity.csv and ExperimentIQ_Business_Analytics_Report.xlsx. Browser-downloaded bytes were not reread; local payloads/workbook are separately tested.
+- Browser review exposed Markdown interpretation of paired currency symbols in the interval caption. Changed its labels to USD without changing calculations. All original eight pages remain covered by AppTest; this acceptance did not repeat a full live traversal of those pages.
