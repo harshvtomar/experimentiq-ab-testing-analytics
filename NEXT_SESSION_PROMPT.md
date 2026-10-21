@@ -1,19 +1,29 @@
-# EXPERIMENTIQ — WORK SESSION 4
-## Final End-to-End QA, Dashboard Refinement, Executive Case Study, GitHub Presentation and Resume Readiness
+# ExperimentIQ - maintenance and optional improvements
 
-Preferred model: GPT-6 Astra — Medium Reasoning if available. One focused five-hour Work session. Continue https://github.com/harshvtomar/experimentiq-ab-testing-analytics on main and the existing https://experimentiq-ab-testing-analytics.streamlit.app/ . Do not restart, create another repository/app or alter unrelated repositories.
+Continue the existing repository and Streamlit deployment; do not restart or create replacements.
+Repository: https://github.com/harshvtomar/experimentiq-ab-testing-analytics
+Live: https://experimentiq-ab-testing-analytics.streamlit.app/
 
-1. Inspect latest remote main and read README.md, PROJECT_STATE.md, SESSION_LOG.md, docs/QA.md, docs/STATISTICAL_ANALYSIS_PLAN.md, docs/ECONOMICS.md, docs/EXCEL.md, powerbi/README.md and both session2/session3 reports. Inspect current code, tests and verification artifacts. Use actual latest commit/CI rather than assuming the prior checkpoint.
-2. Reproduce `python -m src.pipeline`, `python -m src.statistical_pipeline`, `python -m src.business_pipeline`, `EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q`. Session 3 local baseline is 70 passing tests. Restore existing pinned dependencies if runtime reset; never fabricate acquisition/integration success.
-3. Preserve authentic 64,000-row source/checksum, 12 SQL queries, repeated rows, separate normalized fields and licensing safeguards. Keep row-level files outside Git. Preserve Session 2 statistical plan/results: Fisher/Newcombe, Holm within declared families, 10,000 empirical bootstrap replications, 28 subgroup contrasts and 12 interactions. No validated subgroup targeting rule.
-4. Session 3 added src/economics.py, src/business_pipeline.py, sql/economics.sql and the ninth page Business Economics & ROI Simulator. Validate missing/zero/negative/break-even cases, typed input limits, fixed cost even at zero audience, control baseline, cost denominators and conditional interval transformation. Commercial defaults are hypothetical, not measured profit.
-5. Verify all nine live pages, realistic narrow/wide layouts, charts, controls, no-data states and downloads with a real browser where available. Original eight: Executive Overview, Treatment Comparison, Customer Segment Explorer, Data Quality & Methodology, Statistical Significance, Revenue Uplift Analysis, Segment Effect Explorer, Business Recommendations. Save actual screenshots. Fix concrete UI issues without changing analysis meaning.
-6. Excel: reports/session3/ExperimentIQ_Business_Analytics_Report.xlsx has seven sheets, editable formulas and three bound charts. Artifact Tool input-change/reopen and LibreOffice recalculation evidence exist; native Microsoft Excel was not run. Use spreadsheet skill for edits, rebuild from scripts/build_workbook.mjs where supported, then update manifest/check evidence. Verify full source precision, zero/blank distinction, formulas, charts, cached values and no broken references. Do not claim native Excel verification without opening it.
-7. Power BI: powerbi/ has validated CSVs, Power Query import function, relationships, DAX specifications and five-page layout. No native .pbix or executed DAX exists. If supported Windows/Desktop access becomes available, create/open/reconcile actual report; otherwise retain precise limitations and useful import package. Do not treat CSVs as a finished Power BI dashboard.
-8. Produce a polished executive case study with business problem, authentic design, methods, SQL/Python workflow, primary evidence, uncertainty, conditional economics, limitations and replication recommendation. Distinguish statistical evidence, effect magnitude and economic feasibility. Include screenshots and links to working deliverables. Optional PDF/deck only if core QA is complete.
-9. Improve GitHub presentation, concise reproduction steps, architecture, source/licensing note, result table, verified screenshots and final feature checklist. Create interview talking points and accurate entry-level Data Analyst/Business Analyst resume bullets based on verified work; no invented commercial outcomes or use metrics.
-10. Run full regression suite and hosted CI on final code commit. Verify remote main, live deployment and exports. Record exact test counts/skips, actual CI IDs, verification dates and unresolved limitations in docs/QA.md, PROJECT_STATE.md and SESSION_LOG.md. Update NEXT_SESSION_PROMPT.md for maintenance/follow-up, not a restart.
+Read remote main, README.md, PROJECT_STATE.md, SESSION_LOG.md, docs/QA.md and docs/RELEASE_NOTES.md first. Remote main is authoritative. Application QA fixes were published as 0eb68f4c7b807fa1b1a335cfa509188272061334; later commits contain final portfolio deliverables and evidence. Fetch the latest SHA rather than assuming this code checkpoint is the latest commit.
 
-Current illustrative economics: N=10,000, m=40%, c=$0.05, F=$500, k=1. Men net ~$2,079.31 (conditional interval $955.38–$3,229.10), women ~$697.65 (−$323.86–$1,723.82). Read full-precision exports rather than hardcoding these rounded values. Never label these as observed profit or guaranteed forecasts. No source currency conversion.
+The four-session portfolio scope is delivered. This is maintenance guidance, not a required fifth development session. Current suite: 75 tests; 64 fixture-only and 11 authentic integration. Full final local regeneration passed; hosted code CI run 39601927562 passed. Final publication evidence is in docs/QA.md and the repository Actions history.
 
-Final response: verified remote SHA, repo/live URLs, final tested scope, workbook/report/case-study locations, Power BI/native Excel status, actual tests/CI/browser verification, honest resume bullets and precise remaining blockers. Finish only with evidence-backed claims.
+For any code/dependency change, restore pinned Python 3.12 requirements and run:
+```
+python -m src.pipeline
+python -m src.statistical_pipeline
+python -m src.business_pipeline
+EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q
+```
+Preserve all 64,000 source rows, pinned checksum, 12 SQL analyses, statistical methods and families, 10,000 bootstrap replications/seed, conditional economics, seven-sheet workbook and nine dashboard pages. Keep row-level data outside Git until redistribution rights are established. Never replace authentic results with synthetic data. Tests may use synthetic fixtures.
+
+Optional work, only when requested or supported:
+1. Open/recalculate the existing workbook in native Microsoft Excel; record version, boundary cases and actual results. Current verification is Artifact Tool and LibreOffice, not Excel native.
+2. Use Windows Power BI Desktop to import the existing package, execute/validate DAX, reconcile measures and create a native PBIX. Current package is not a rendered Power BI report.
+3. With contemporary randomized data, preregister new hypotheses, allocation and sample-size design, add observed costs/margins and guardrails, then evaluate rollout thresholds. Do not change historical findings for presentation.
+4. Clarify raw-data redistribution rights and maintain a legally permitted source/cache strategy.
+5. Review dependencies and live-app availability periodically; validate changes with the full suite and a real browser. Streamlit may sleep; a successful GitHub push alone is not deployment verification.
+
+PDF regeneration: install reportlab==4.4.9, ensure DejaVuSans.ttf and DejaVuSans-Bold.ttf are available (EXPERIMENTIQ_FONT_DIR can override the default Linux font folder), then run python scripts/build_case_study.py. Use the committed genuine screenshots. Render and inspect every page after edits. Excel builder requirements are in docs/EXCEL.md.
+
+Update QA, project state and session log with actual commands/results. Publish meaningful commits, verify remote SHA and hosted CI. Distinguish historical evidence, hypothetical economics and unverified native-tool claims. No commercial savings, employment/client engagement or present-day performance is implied by this independent project.

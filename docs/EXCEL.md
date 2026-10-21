@@ -17,4 +17,9 @@ Artifact Tool: demo, changed inputs, zero audience, zero costs, zero margin, mis
 
 LibreOfficeDev 26.8 headless: opened and converted a disposable copy; independently checked recalculated E22:F24 against Python/Artifact values and scanned worksheets for error cells (none). Evidence is in libreoffice_verification.json. The delivered file remains the Artifact Tool export, not the converted copy.
 
-**Native Microsoft Excel has not been opened or tested.** Power BI Desktop has not been opened or tested. Session 4 may add these checks where supported. No native Excel/Power BI verification is implied by rendering previews or successful OOXML export.
+**Native Microsoft Excel has not been opened or tested.** Power BI Desktop has not been opened or tested. Optional future native checks require supported application sessions. No native Excel/Power BI verification is implied by rendering previews or successful OOXML export.
+
+## Final Session 4 audit
+The unchanged builder was executed against a disposable directory containing canonical workbook inputs. Both recalculation-check JSON and reopened values matched the delivered evidence exactly. The delivered workbook retained SHA-256 `5dbea525acb18d0d3d62ba6ef9279a53ec6f17c4900c95159ad4962b9eef32f4`; seven sheets, 113 formulas and three charts were inspected. A fresh LibreOffice headless conversion of a disposable copy reproduced E22:F24, with no formula error cells. Session 4 evidence is in `reports/session4/workbook_regeneration.json` and `reports/session4/libreoffice_recalculation.json`.
+
+Native Microsoft Excel remains unverified. It is optional future validation requiring an available native Excel session, not an unfinished prerequisite for the current portfolio.

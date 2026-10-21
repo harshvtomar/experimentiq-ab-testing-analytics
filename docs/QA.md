@@ -58,3 +58,62 @@ Synthetic rows exist only in tests/conftest.py and never feed project findings. 
 - Browser review exposed Markdown interpretation of paired currency symbols in the interval caption. Changed its labels to USD without changing calculations. All original eight pages remain covered by AppTest; this acceptance did not repeat a full live traversal of those pages.
 
 - Final caption-only correction: after restoring runtime dependencies (pytest initially absent), full local regression passed **70 tests in 14.65s**, no skips/failures. Commit 7b999dec7efad0d79e60ce4333f4085df1c3c6a1 reached remote; hosted run 39600063982 succeeded in both jobs. Live reload confirmed plain USD interval labels and unchanged values. Actual screenshot: screenshots/economics-simulator.png. Subsequent checkpoint changes only documentation/screenshots.
+
+# Session 4 - final regression and portfolio QA
+
+## Baseline and corrections
+Inspected remote main at `eece6c9b32d31b4458de4573d9cf283fffa0d785`, the required checkpoint/method/report documents, Python/SQL/dashboard/economics/workbook code and tests. Ran all three pipelines and the authentic-data suite: **70 passed in 13.42s**, no failures/skips.
+
+Found and corrected two numerical reporting defects:
+- pandas JSON decimal-place serialization rounded sufficiently small nonzero p-values to zero. Shared strict serialization now preserves native floating-point precision and maps missing values to JSON null; infinite values fail. Dashboard p-value columns use scientific notation. Existing statistical estimates, CSV outputs and decisions remain unchanged.
+- SQL reconciliation received object-typed all-null columns for undefined economics ratios at zero inputs. Explicit numeric conversion preserves missingness and permits correct comparison. The new boundary test initially produced **1 failed, 74 passed in 14.54s**; corrected run: **75 passed in 14.41s**.
+
+Also clarified continuity adjustment versus multiplicity adjustment, replaced an unsupported USD label with source dollars, and refined title/spacing/responsive metric labels. Published application commit: `0eb68f4c7b807fa1b1a335cfa509188272061334`.
+
+## Final reproducibility run
+After continuation reset the runtime packages, restored `requirements.txt` (pytest was initially absent). Executed:
+```
+python -m src.pipeline
+python -m src.statistical_pipeline
+python -m src.business_pipeline
+EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q --junitxml=reports/session4/verification/tests.xml
+```
+All commands completed. **75 passed in 13.71s; 0 failed, 0 skipped.** Logs and JUnit are committed under `reports/session4/verification/`. Only elapsed-runtime metadata changed on regeneration; restored that nondeterministic metadata to the published checkpoint. Statistical CSVs, business exports, data checksum and delivered workbook remained unchanged.
+
+New independent checks compare authentic Fisher tests, Newcombe intervals, Welch p-values and all Holm families with reference implementations; verify SQL economics at zero audience/margin/costs, very large audience and break-even; exercise negative uplift and sensitivity slopes; reconcile all eight Power BI fact exports. Existing tests cover missing/invalid inputs, filtered/empty data, dashboard tables, bootstrap reproducibility and workbook formulas/caches. Synthetic fixtures never feed reported experimental findings.
+
+## Hosted code CI
+[Run 39601927562](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39601927562), commit `0eb68f4c7b807fa1b1a335cfa509188272061334`, completed successfully.
+- Unit job 119228304809: **64 passed, 11 deselected in 1.18s**.
+- Authentic integration job 119228304335: **11 passed, 64 deselected in 16.71s**.
+- Original data acquisition, inference reproduction and economic SQL reconciliation succeeded before integration testing. Deselection is intentional suite separation, not skipping real-data validation.
+
+## Live browser QA
+Existing public app: https://experimentiq-ab-testing-analytics.streamlit.app/ . Connected Chrome opened the actual deployed app after the code push and showed the new title/sidebar/currency caption. No deployment conclusion was inferred from Git alone.
+
+| Page | Actual browser check |
+|---|---|
+| Executive Overview | 64,000 customers, three arms, 67,258.13 observed spend; Plotly charts and table rendered. |
+| Treatment Comparison | Three comparisons, absolute/relative rate differences and spend comparisons rendered. |
+| Customer Segment Explorer | Web-only filter returned 28,217, independently matching Python; clearing all channels returned zero with the intended no-match state. |
+| Data Quality & Methodology | Pinned SHA, 64,000 valid rows, completeness and 6,562 repeats visible; baseline balance expanded. |
+| Statistical Significance | Conversion forest rendered; changing Outcome to visit updated estimates/intervals. |
+| Revenue Uplift Analysis | Revenue forest, diagnostics and histogram rendered; changing bootstrap comparison to women's email versus control updated the histogram. |
+| Segment Effect Explorer | Changed partition to newbie and treatment to women's email; two level-specific estimates rendered with sample-size table and interaction caution. |
+| Business Recommendations | Correct primary effect magnitudes/Holm p-values, unknown profitability and contemporary replication recommendation visible. |
+| Business Economics & ROI Simulator | Disabled assumptions withheld conclusions. Enabled demo men's net 2,079.31; zero audience net -500; restored 10,000 and switched to women's net 697.65, interval -323.86 to 1,723.82. Inputs and conditional labels matched canonical Python. |
+
+All **14 custom download events completed**: arm KPIs, comparisons, filtered KPIs, baseline balance, quality report, binary inference (visit), revenue inference, all subgroup effects, all interactions, statistical report, inference JSON, current scenario, sensitivity analysis and Excel workbook. Downloaded bytes on the user's computer were not reread. Payload correctness is independently covered by canonical outputs/tests. Built-in Plotly toolbar exports were not exhaustively tested.
+
+Representative desktop viewport 1440x1000 and narrow 390x844 checks: overview metrics/charts and economics controls/metrics/interval text rendered legibly; navigation expanded/collapsed and pages changed. Wide data tables remain horizontally scrollable rather than squeezing numerical columns. This is not exhaustive device certification. Viewport override was reset after QA. Genuine captures are in `screenshots/session4/`.
+
+One checkbox automation `check()` did not change state; DOM inspection confirmed it remained unchecked, and clicking the visible label enabled it. This was an automation recovery, not a verified app defect.
+
+## Excel, Power BI and PDF
+- Full unchanged workbook builder ran in a disposable directory; regenerated recalculation/reopen evidence matched delivery exactly. Seven sheets, 113 formulas, three bound charts and no broken/error formulas were checked. Original workbook SHA remained `5dbea525acb18d0d3d62ba6ef9279a53ec6f17c4900c95159ad4962b9eef32f4`.
+- Fresh LibreOffice headless open/recalculation of a disposable copy matched Python for net/interval cells E22:F24; no formula error cells. See Session 4 JSON evidence. Prior seven-sheet visual review remains recorded in Session 3; no workbook layout change was made. Native Microsoft Excel was not run.
+- Power BI grains/keys/source values and integration instructions reviewed; eight fact exports reconciled by authentic-data tests. No Windows Power BI Desktop, native PBIX, executed DAX or rendering claim.
+- Six-page ReportLab case study uses canonical aggregate CSVs and genuine browser screenshots. Rendered every page with Poppler and visually inspected all six. Embedded DejaVu fonts corrected an initial standard-font rendering issue; no final clipping/overlap found. The PDF is not a replacement for interactive dashboard QA.
+
+## Remaining limits
+No known unresolved regression failure. Native Microsoft Excel and native Power BI verification require their supported application environments. Raw redistribution permission remains unresolved. Economics remains hypothetical; modern rollout needs a contemporary experiment and measured commercial inputs.

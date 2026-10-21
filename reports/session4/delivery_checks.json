@@ -1,0 +1,14 @@
+{
+  "local_document_links_missing": [],
+  "pdf_pages": 6,
+  "pdf_key_values_present": true,
+  "statistical_csvs_unchanged_from_session3": {
+    "reports/session2/binary.csv": true,
+    "reports/session2/bootstrap_histogram.csv": true,
+    "reports/session2/interactions.csv": true,
+    "reports/session2/revenue.csv": true,
+    "reports/session2/revenue_diagnostics.csv": true,
+    "reports/session2/segments.csv": true
+  },
+  "workbook_sha256": "5dbea525acb18d0d3d62ba6ef9279a53ec6f17c4900c95159ad4962b9eef32f4"
+}

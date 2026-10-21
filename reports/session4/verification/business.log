@@ -1,0 +1,5 @@
+    treatment     revenue   net_value     net_low    net_high
+      Control    0.000000    0.000000    0.000000    0.000000
+  Men's email 7698.271559 2079.308624  955.375802 3229.096659
+Women's email 4244.122159  697.648864 -323.863703 1723.816301
+{"status": "passed", "fields": ["revenue", "gross_contribution", "variable_cost", "total_cost", "net_value", "net_low", "net_high", "break_even_uplift", "break_even_margin", "max_delivery_cost", "net_return_on_cost"], "absolute_tolerance": 1e-09}

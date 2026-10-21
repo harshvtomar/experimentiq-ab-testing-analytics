@@ -1,26 +1,36 @@
-# ExperimentIQ — Session 3 checkpoint
+# ExperimentIQ - final portfolio checkpoint
+
 Repository: https://github.com/harshvtomar/experimentiq-ab-testing-analytics (main)
-Live: https://experimentiq-ab-testing-analytics.streamlit.app/
+Live application: https://experimentiq-ab-testing-analytics.streamlit.app/
 
-## Preserved foundation
-Session 2 base: 4afa95e77d4ead1275b696a566b6d350d91f8f8f. Authentic Hillstrom data: 64,000 rows, 12 fields, pinned SHA-256 0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece. All 6,562 repeated rows retained. No original IDs/timestamps. Raw bytes/customer rows excluded from Git due to unconfirmed redistribution rights. Twelve SQL analyses and eight KPI fields reconcile.
+## Architecture and preserved evidence
+Original Hillstrom CSV -> checksum/schema/quality validation -> preserved observations with separate normalized fields -> Python KPIs and constrained SQLite -> statistical inference -> conditional economics -> Streamlit, Excel and aggregate Power BI import assets.
 
-Fisher/Newcombe binary inference; separate Holm families; 10,000-replication revenue bootstrap; 28 subgroup contrasts and 12 interactions. No adjusted interaction rejection. Original statistical exports/methods are unchanged.
+64,000 rows, 12 original fields; SHA-256 `0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece`. All 6,562 repeated rows retained. No missing/invalid values found. Raw/customer-level files and SQLite remain excluded from Git because redistribution permission is unconfirmed. No original IDs, timestamps or assignment logs exist in the supplied file.
 
-## Architecture and Session 3
-Original data → normalized Python/SQLite KPIs → canonical inference → conditional economics → Streamlit, aggregate reports, formula-based Excel and Power BI import assets.
-- src/economics.py: Assumptions validation, economic bridge, break-even, conditional intervals, comparison and sensitivity.
-- src/business_pipeline.py and sql/economics.sql: exports and 11-field independent reconciliation.
-- src/economics_ui.py: ninth page Business Economics & ROI Simulator; opt-in hypothetical assumptions, three sensitivities and scenario/sensitivity/Excel downloads. Original eight pages retained.
-- reports/session3: seven-sheet Excel workbook, executive report, demonstration/sensitivity tables, reproducibility and workbook verification evidence.
-- scripts/build_workbook.mjs: Artifact Tool builder. docs/EXCEL.md documents runtime requirement and verification boundaries.
-- powerbi: validated aggregate exports, relationship/grain definitions, Power Query/DAX specifications and five-page report layout. No .pbix, no executed DAX.
+All 12 SQL analyses and eight KPI fields reconcile. Fisher/Newcombe binary inference, declared Holm families, 10,000-replication empirical customer bootstrap (seed 20261020), 28 subgroup comparisons and 12 interaction hypotheses remain intact. No Holm-adjusted interaction rejects. Statistical CSV results did not change during Session 4.
+
+## Final features
+- Nine-page Streamlit dashboard with live baseline filters, descriptive comparisons, inference, bootstrap diagnostics, subgroup exploration, recommendations and conditional economics.
+- Canonical economics: explicit assumptions, break-even calculations, sensitivity, conditional uncertainty, 11-field SQL reconciliation and scenario exports.
+- Seven-sheet Excel workbook, 113 formulas, three charts; Artifact Tool builder and verification evidence; unchanged delivered workbook SHA `5dbea525acb18d0d3d62ba6ef9279a53ec6f17c4900c95159ad4962b9eef32f4`.
+- Power BI import package, grains/relationships, Power Query function and DAX specifications. No native PBIX or DAX execution.
+- Six-page final PDF in `reports/session4/ExperimentIQ_Final_Case_Study.pdf`; reproducible ReportLab builder in `scripts/build_case_study.py`. All rendered pages visually inspected.
+- Recruiter README; `docs/RESUME_AND_INTERVIEW.md` with two role-specific entries, 25 questions/answers and a 90-second explanation.
+
+## Session 4 corrections
+Published application commit `0eb68f4c7b807fa1b1a335cfa509188272061334`:
+1. Preserve tiny p-values in strict JSON instead of decimal-place rounding to zero; scientific notation in inference tables.
+2. Convert all-null SQL economic outputs to numeric missing values before reconciliation; zero-input scenarios now compare safely.
+3. Clarify continuity-adjusted relative intervals versus multiplicity adjustment; label money as source dollars.
+4. Refine title, responsive typography, wrapped metric labels and sidebar wording.
 
 ## Verification
-Baseline 46 tests passed. Expanded local suite 70 passed in 15.20s, zero failures/skips/warnings. Includes all original pages, changed simulator inputs, zero/missing economics, SQL, workbook caches/recalculation hashes and Power BI grains. Seven workbook renders reviewed. Artifact export/reopen and LibreOffice recalculation succeeded. Native Microsoft Excel not verified. Implementation c64133e894e136fa4daecf9e564c1da8dcc57410: hosted CI 39562622600 passed 60 unit and 10 authentic integration tests. Live ninth page, changed inputs, zero audience and three downloads verified in Chrome on 2026-10-21. Original eight pages covered by regression AppTest; full fresh browser traversal reserved for Session 4. See docs/QA.md.
+Baseline: 70 passed. Expanded final local regression: **75 passed in 13.71s**, zero failures/skips, after regenerating all three pipelines. Committed logs and JUnit evidence: `reports/session4/verification/`. Hosted code CI run 39601927562 succeeded: 64 unit tests and 11 authentic integration tests; original acquisition and inference/economics regeneration succeeded. See `docs/QA.md` for final publication CI evidence.
 
-## Remaining limits and Session 4
-No observed costs, margins or profits. Scenario outputs are conditional on supplied assumptions; interval excludes modern-market transfer and commercial uncertainty. Source host availability is a dependency; preserve verified cache plus manifest. Raw redistribution permission remains unresolved. Power BI Desktop requires a supported Windows session to create/validate a .pbix; native Microsoft Excel requires an available Excel session.
-Session 4: final end-to-end QA, UI refinement, executive portfolio case study, GitHub presentation and honest resume bullets; inspect and continue existing work. Do not rebuild or change statistical evidence to improve appearances. NEXT_SESSION_PROMPT.md is ready.
+All nine live pages opened in Chrome; changed filters/outcomes/treatments, empty channel selection, disabled assumptions, zero audience and 14 custom download events verified. Desktop 1440x1000 and representative narrow 390x844 layouts checked. Browser download bytes were not reread; canonical outputs are tested locally.
 
-Final code checkpoint: 7b999dec7efad0d79e60ce4333f4085df1c3c6a1, hosted run 39600063982 passed. Local final regression 70 passed in 14.65s. Live currency-caption correction verified; screenshot saved. Later docs-only checkpoint does not change runtime behavior.
+Workbook fully regenerated in a disposable directory; changed-input/reopen evidence matched existing delivery. LibreOffice headless recalculation matched Python, no formula errors. Native Microsoft Excel was not available. Power BI source tables independently match canonical exports; Windows Desktop, native PBIX and DAX rendering remain unverified.
+
+## Maintenance, not another mandatory development session
+`NEXT_SESSION_PROMPT.md` now describes maintenance and optional improvements. Preserve this repository and existing app. Remaining optional verification requires a native Excel session and a Windows Power BI Desktop session. Contemporary business recommendations require a new experiment with observed costs/margins and operational guardrails. Raw redistribution requires explicit rights clarification. No achieved commercial benefits are claimed.

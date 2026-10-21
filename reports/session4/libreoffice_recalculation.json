@@ -1,0 +1,20 @@
+{
+  "engine": "LibreOffice headless",
+  "values_E22_F24": [
+    [
+      2079.30862357815,
+      697.648863746387
+    ],
+    [
+      955.375802408097,
+      -323.863702894232
+    ],
+    [
+      3229.09665882455,
+      1723.8163008827
+    ]
+  ],
+  "formula_errors": [],
+  "python_match": true,
+  "native_microsoft_excel_verified": false
+}

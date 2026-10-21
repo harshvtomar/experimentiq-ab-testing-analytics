@@ -50,3 +50,14 @@
 - Browser review exposed Markdown interpretation of paired currency symbols in the interval caption. Changed its labels to USD without changing calculations. All original eight pages remain covered by AppTest; this acceptance did not repeat a full live traversal of those pages.
 
 - Final caption-only correction: after restoring runtime dependencies (pytest initially absent), full local regression passed **70 tests in 14.65s**, no skips/failures. Commit 7b999dec7efad0d79e60ce4333f4085df1c3c6a1 reached remote; hosted run 39600063982 succeeded in both jobs. Live reload confirmed plain USD interval labels and unchanged values. Actual screenshot: screenshots/economics-simulator.png. Subsequent checkpoint changes only documentation/screenshots.
+
+## Session 4 - final QA and portfolio delivery
+- Started from remote `eece6c9b32d31b4458de4573d9cf283fffa0d785`; preserved all original data, 12 SQL queries, inference families, 10,000 bootstrap replications, economics and seven-sheet workbook.
+- Baseline three-pipeline reproduction: 70 tests passed in 13.42s.
+- Independent audit exposed tiny p-values rounded to zero in JSON and all-null SQL economics reconciliation failure. Added precision-safe serialization and numeric missing-value handling; new failing boundary test fixed. Clarified relative-interval language/source-dollar units and responsive headings/labels.
+- Published application fixes as `0eb68f4c7b807fa1b1a335cfa509188272061334`. Hosted run 39601927562 succeeded, actual logs: 64 unit + 11 authentic integration tests.
+- After continuation runtime reset, restored pinned dependencies; final all-pipeline regeneration and regression: 75 passed in 13.71s, zero failures/skips. Committed logs/JUnit in reports/session4/verification. Statistical CSVs unchanged; only runtime metadata regenerated and was restored to the prior evidence snapshot.
+- Completed live nine-page traversal, changed outcome/bootstrap/subgroup/treatment controls, Web-only and empty filters, disabled assumptions and zero-audience scenario. All 14 custom download events completed; browser bytes not reread. Representative desktop/narrow checks passed; genuine screenshots saved; viewport override reset.
+- Regenerated unchanged workbook in disposable workspace; recalculation/reopen evidence matched delivery. Fresh LibreOffice recalculation matched Python without formula errors. Delivered XLSX unchanged. Native Excel unavailable; Power BI remains validated import assets with unexecuted DAX/PBIX.
+- Created six-page PDF with canonical findings, genuine screenshots and conditional recommendations; all six Poppler renders inspected after embedding fonts. Added recruiter README, six role-specific resume bullets, 25 interview answers and 90-second explanation.
+- Updated project state, QA, Excel/Power BI status, release notes and maintenance guidance. No required fifth development session; native-tool checks and contemporary experiment work remain optional extensions.

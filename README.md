@@ -1,21 +1,66 @@
 # ExperimentIQ
 ### A/B Testing & Incremental Revenue Optimization
 
-A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Sessions 1–2 delivered and live-verified**: binary-outcome inference, declared Holm families, 10,000-replication customer bootstrap, exploratory subgroup interactions and eight interactive Streamlit pages. Hosted verification is recorded in docs/QA.md.
+**Which email should a retailer consider sending, and what evidence is needed before rollout?** ExperimentIQ answers that question with an authentic 64,000-customer randomized experiment, independently reconciled Python/SQL analytics, statistical inference and transparent business scenarios.
 
-## Business question
-Which merchandise email, if any, should a retailer consider deploying to improve purchasing and revenue? Conversion is primary; website visits and two-week spend per assigned customer are secondary. All three experimental arms remain distinct.
+[Live dashboard](https://experimentiq-ab-testing-analytics.streamlit.app/) · [Executive case study (PDF)](reports/session4/ExperimentIQ_Final_Case_Study.pdf) · [Excel report](reports/session3/ExperimentIQ_Business_Analytics_Report.xlsx) · [Resume & interview guide](docs/RESUME_AND_INTERVIEW.md)
 
-## Computed findings
-|Arm|Assigned customers|Conversions|Conversion rate|Visit rate|Spend/customer|
-|---|---:|---:|---:|---:|---:|
-|Control|21,306|122|0.5726%|10.6167%|$0.6528|
-|Men's email|21,307|267|1.2531%|18.2757%|$1.4226|
-|Women's email|21,387|189|0.8837%|15.1400%|$1.0772|
+An independent portfolio project by harshvtomar. Historical experimental evidence, **not a claim of realized profit or current-market performance**.
 
-Observed total spend: **$67,258.13**. Men's email minus control conversion difference: **0.6805 percentage points**; women's email minus control: **0.3111 percentage points**. These observed differences now have formal inference in [the statistical report](reports/session2/STATISTICAL_REPORT.md). They are not proof of profitable rollout. Outcomes span two weeks following the campaign; this is historical evidence, not a present-day revenue forecast.
+![Live ExperimentIQ overview](screenshots/session4/executive-desktop.png)
 
-## Reproduce (Python 3.12)
+## Evidence in one minute
+Kevin Hillstrom's original MineThatData experiment assigned customers to men's merchandise email, women's merchandise email, or no email. Outcomes cover two weeks. Conversion is primary; visits and spend per assigned customer are secondary.
+
+| Arm | Assigned | Conversion | Visit rate | Spend/customer |
+|---|---:|---:|---:|---:|
+| Control | 21,306 | 0.5726% | 10.6167% | $0.6528 |
+| Men's email | 21,307 | 1.2531% | 18.2757% | $1.4226 |
+| Women's email | 21,387 | 0.8837% | 15.1400% | $1.0772 |
+
+Observed spend totals **$67,258.13**. Every denominator includes all assigned customers, including zero outcomes. Dollar labels follow the original source convention.
+
+| Versus control | Conversion difference, pp (95% CI) | Primary Holm p | Revenue/customer difference (95% bootstrap CI) |
+|---|---|---:|---|
+| Men's email | +0.6805 [0.5014, 0.8641] | 2.3349e-13 | +$0.7698 [$0.4888, $1.0573] |
+| Women's email | +0.3111 [0.1502, 0.4745] | 0.000165 | +$0.4244 [$0.1690, $0.6810] |
+
+Binary outcomes: two-sided Fisher tests and Newcombe/Wilson risk-difference intervals. Holm adjusts p-values within declared families; intervals are **pointwise, not multiplicity-adjusted**. Revenue intervals use 10,000 customer bootstrap replications (seed 20261020); revenue p-values use a separate approximate Welch test. The analysis plan is retrospective, not preregistered. [Statistical report](reports/session2/STATISTICAL_REPORT.md) · [Analysis plan](docs/STATISTICAL_ANALYSIS_PLAN.md)
+
+No planned subgroup interaction rejects after Holm across 12 tests. The recommendation is **contemporary randomized replication with measured costs and guardrails**, not immediate rollout or retrospective subgroup targeting.
+
+## What works
+- **Python + SQLite:** checksum-pinned retrieval, schema validation, separate normalized fields, 12 SQL analyses, eight KPI fields reconciled independently.
+- **Nine-page Streamlit app:** overview, treatment comparison, customer segments, data quality, significance, revenue uplift, segment effects, recommendations and economics simulator. Live filters, charts and 14 custom downloads.
+- **Conditional economics:** editable audience, margin, delivery cost, setup cost and effect multiplier; break-even thresholds, sensitivity and conditional intervals. Eleven outputs reconcile with independent SQL arithmetic.
+- **Excel:** seven worksheets, 113 formulas, three charts; changed-input and boundary recalculation, export/reopen and LibreOffice verification. Native Microsoft Excel remains unverified.
+- **Power BI:** aggregate CSVs, grain/relationship documentation, Power Query import function and DAX specifications. **No verified PBIX, executed DAX or native report rendering.** [Package](powerbi/README.md)
+- **QA:** 75 automated tests; fixture-only and authentic-data CI jobs; all nine live pages checked in Chrome. [Detailed evidence](docs/QA.md)
+
+## Business scenarios, not observed profit
+The model uses `net contribution = audience × effect multiplier × incremental revenue/customer × margin − delivery cost × audience − fixed cost`.
+
+Illustration only: 10,000 customers, 40% margin, $0.05 delivery/customer, $500 setup, multiplier 1. Men's modeled contribution is $2,079.31 (conditional interval $955.38–$3,229.10); women's is $697.65 (−$323.86–$1,723.82). Original costs and margins are unavailable. These intervals exclude commercial-input uncertainty and transfer to new customers. [Economics contract](docs/ECONOMICS.md) · [Executive business report](reports/session3/EXECUTIVE_BUSINESS_REPORT.md)
+
+![Live economics simulator with explicitly hypothetical inputs](screenshots/session4/economics-desktop.png)
+
+## Architecture
+```mermaid
+flowchart TD
+    A[Original Hillstrom CSV] --> B[Checksum and schema validation]
+    B --> C[Preserved rows and normalized fields]
+    C --> D[Python KPIs]
+    C --> E[SQLite analytics]
+    D <--> E
+    D --> F[Inference and conditional economics]
+    F --> G[Streamlit dashboard]
+    F --> H[Excel and aggregate reports]
+    F --> I[Power BI import package]
+```
+
+Python 3.12 · pandas · NumPy · SciPy · statsmodels · SQLite · pytest · Streamlit · Plotly · GitHub Actions. Excel is generated with Artifact Tool; the PDF uses ReportLab.
+
+## Reproduce
 ```bash
 git clone https://github.com/harshvtomar/experimentiq-ab-testing-analytics.git
 cd experimentiq-ab-testing-analytics
@@ -28,82 +73,21 @@ python -m src.business_pipeline
 EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q
 python -m streamlit run app.py
 ```
-Windows PowerShell activation: `.venv\Scripts\Activate.ps1`; set `$env:EXPERIMENTIQ_REQUIRE_DATA="1"` before running pytest. Network access to the author's dataset is required on first run. Subsequent runs verify the local checksum. A download or checksum failure stops processing rather than using synthetic data.
+Windows PowerShell: activate `.venv\Scripts\Activate.ps1`, then set `$env:EXPERIMENTIQ_REQUIRE_DATA="1"` before pytest. First run requires access to the original data host; later runs verify the cached checksum. Failure to acquire or verify data stops the pipeline. Synthetic fixtures are used only for tests.
 
-## Architecture
-Original CSV → checksum verification → schema/quality validation → separate normalized fields → canonical Python KPIs and independent constrained SQLite analytics → aggregate reports and Streamlit.
+- Fixture tests: `python -m pytest -m 'not integration' -q`.
+- Real-data CI acquires and validates the original dataset, regenerates inference/economics, then runs integration tests. Missing data cannot silently count as success.
+- [Excel rebuild instructions](docs/EXCEL.md) document the separate Artifact Tool runtime requirement.
+- PDF: install `reportlab==4.4.9` and run `python scripts/build_case_study.py` after the pipelines. It uses committed aggregate outputs and genuine screenshots. DejaVu Sans fonts are required; set `EXPERIMENTIQ_FONT_DIR` if they are outside `/usr/share/fonts/truetype/dejavu`.
 
-- `src/`: retrieval, validation, preprocessing, metrics, SQLite and pipeline orchestration.
-- `sql/`: constrained schema, KPI view and 12 meaningful analyses.
-- `app.py`: the four original pages plus Statistical Significance, Revenue Uplift Analysis, Segment Effect Explorer and Business Recommendations. Statistical rendering is isolated in `src/statistical_ui.py`.
-- `reports/`: computed aggregate KPIs, quality/provenance/SRM diagnostics, baseline balance and query exports.
-- `tests/`: deterministic synthetic unit fixtures and explicitly real-data integration/AppTest coverage.
-- `docs/`: business brief, source/license review, data dictionary, KPI contract, methodology and SQL guide.
-- `PROJECT_STATE.md`, `SESSION_LOG.md`, `NEXT_SESSION_PROMPT.md`: continuation checkpoint.
+## Data provenance and limitations
+[Original challenge](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html) · [Source/license review](docs/DATA_SOURCE.md) · [Data dictionary](docs/DATA_DICTIONARY.md) · [KPI definitions](docs/KPI_DEFINITIONS.md)
 
-## Verified foundation
-64,000 rows and 12 original fields. No missing values, unexpected categories or invalid numeric values observed. The 6,562 repeated rows after first occurrence are retained. Original `Surburban` spelling remains; a separate geography field uses `Suburban`. No fabricated customer IDs or timestamps.
+Validated 64,000 rows and 12 original fields; no missing or invalid values found. All 6,562 repeated rows after first occurrence remain because original customer identifiers are unavailable. Original spelling is preserved; normalized geography is separate. Source SHA-256: `0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece`.
 
-All eight numeric arm KPI fields reconcile between SQL and Python. Dashboard calculations reuse canonical functions; filters only use baseline fields, sample sizes accompany comparisons, and empty selections show an explanatory state. Downloads are labeled aggregate CSV/diagnostic JSON exports.
+No explicit redistribution permission was established: raw/customer-level files and SQLite remain outside Git. There are no original assignment logs, timestamps, observed campaign costs, margins or lifetime outcomes. Historical two-week results cannot establish present-day profitability. Source-host availability is a reproduction dependency.
 
-## Data provenance and licensing
-[Original challenge](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html) · [TFDS corroborating catalog](https://www.tensorflow.org/datasets/catalog/hillstrom). Retrieved from the original CSV URL; checksum and timestamp are in `reports/provenance.json`. No explicit dataset redistribution license was found. Raw/customer-level data and SQLite are excluded from Git. See [source review](docs/DATA_SOURCE.md).
+## Verification and maintenance
+Session 4 final local regression: **75 passed, 0 failed, 0 skipped**. Published application fixes passed [CI run 39601927562](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39601927562): 64 unit + 11 authentic integration tests. [QA record](docs/QA.md) distinguishes local, browser, hosted and native-tool verification.
 
-## Testing and CI
-`python -m pytest -m 'not integration' -q` runs fixture-only tests. Real-data tests skip explicitly if data is absent, unless `EXPERIMENTIQ_REQUIRE_DATA=1`, which makes absence fail. GitHub Actions has separate unit and authentic-integration jobs. The latter downloads and verifies the dataset before testing and cannot pass by silently skipping data acquisition. See `docs/QA.md` for actual run results and deployment status.
-
-## Limits and roadmap
-No original customer IDs, timestamps, assignment logs, costs, margins or lifetime outcomes. No claim that unadjusted raw means prove efficacy. Segment comparisons are exploratory.
-
-1. **Session 1:** authentic data, Python/SQL foundation, integrity diagnostics and dashboard MVP.
-2. **Session 2:** inference, confidence intervals, multiplicity, robust revenue uncertainty and segment interactions.
-3. **Session 3:** explicit economics scenarios, Excel executive reporting and Power BI integration where available.
-4. **Session 4:** final QA, deployment refinement and portfolio case study.
-
-## Live dashboard and verification
-[Open ExperimentIQ](https://experimentiq-ab-testing-analytics.streamlit.app/) — deployed to Streamlit Community Cloud, Python 3.12, branch `main`, entry point `app.py`.
-
-At the Session 1 checkpoint, all four original pages were opened in a real browser. The Web-only filter returned 28,217 customers, independently matching Python. Clearing all channels produced the expected no-data state. All five custom download controls completed: arm KPIs, comparisons, filtered KPIs, baseline balance and quality report. The numerical tables are additionally verified through AppTest and SQL reconciliation. Browser downloads were observed completing; downloaded bytes on the user's computer were not re-read.
-
-![Verified live executive overview](screenshots/executive-overview.png)
-
-Session 1 tests: **23 passed, 0 failed, 0 skipped** (historical checkpoint). [Historical Session 1 CI](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39309754651): both jobs passed. The final checkpoint changes documentation/screenshots only. See [QA evidence](docs/QA.md) and [Session 3 prompt](NEXT_SESSION_PROMPT.md).
-
-## Session 2 statistical results
-The retrospective analysis plan was committed as `2397f9dfb0f227dbfda728b5a11b89b03b9c3b59` before Session 2 inference. It is not preregistration: descriptive outcomes were already known.
-
-|Contrast|Conversion difference, pp (95% pointwise CI)|Primary Holm p|Revenue/customer difference (95% bootstrap CI)|
-|---|---|---:|---|
-|Men’s email − control|+0.6805 [0.5014, 0.8641]|2.3349e-13|+$0.7698 [$0.4888, $1.0573]|
-|Women’s email − control|+0.3111 [0.1502, 0.4745]|0.000165|+$0.4244 [$0.1690, $0.6810]|
-
-Binary tests: two-sided Fisher; risk-difference intervals: Newcombe/Wilson. Each secondary endpoint has its own two-contrast Holm family; three email-versus-email outcomes form an exploratory family. CIs are pointwise, not multiplicity-adjusted. Revenue p-values use a separate approximate Welch test, not bootstrap sign counts. All nine outcome/contrast results, raw/adjusted p-values, relative-effect intervals, sample sizes and assumptions are exported.
-
-No planned interaction remains significant after Holm across 12 tests; do not infer validated subgroup targets. These historical assignment effects support consideration of contemporary replication. Costs and margins remain absent, so economic meaningfulness and profitable rollout are undetermined.
-
-**Reproduction:** `python -m src.statistical_pipeline` generates [strict JSON](reports/session2/inferential_results.json), CSV tables, bootstrap diagnostics and [the statistical report](reports/session2/STATISTICAL_REPORT.md). Seed 20261020, 10,000 customer bootstrap replications, including all zero-spend observations. Full local test suite: **46 passed, 0 failed, 0 skipped**. See [QA evidence](docs/QA.md).
-
-## Session 2 hosted verification
-Implementation commit `c582909b345d29e0ca1ed79ba478f4b26f2187b9`: [GitHub Actions run 39378714645](https://github.com/harshvtomar/experimentiq-ab-testing-analytics/actions/runs/39378714645) passed both jobs, with 39 unit and 7 authentic-data integration tests. The hosted job acquired the pinned original data and reproduced inference.
-
-All eight pages opened on the existing live app. Outcome selection, bootstrap comparison selection and both subgroup controls updated their charts; all six new custom downloads completed. No downloaded browser file bytes were independently reread. Numerical payloads are checked by canonical integration tests.
-
-![Verified live statistical significance page, visit endpoint](screenshots/statistical-significance.png)
-
-Continue with [the Session 4 prompt](NEXT_SESSION_PROMPT.md) for final QA, portfolio presentation and supported native application verification.
-
-## Session 3 business economics
-The ninth page, **Business Economics & ROI Simulator**, uses editable, explicitly hypothetical audience, contribution margin, delivery cost, fixed setup cost and effect multiplier. It starts without an economic conclusion until assumptions are enabled. Treatment/control comparisons, affine uncertainty intervals, break-even thresholds, three sensitivity charts and CSV exports share `src/economics.py`. All original eight pages remain.
-
-- [Editable seven-sheet Excel workbook](reports/session3/ExperimentIQ_Business_Analytics_Report.xlsx): real formulas, three charts, tested recalculation and source evidence.
-- [Executive business report](reports/session3/EXECUTIVE_BUSINESS_REPORT.md): statistical evidence, magnitude and conditional economic decision.
-- [Economics formulas](docs/ECONOMICS.md) and [Excel reproduction/verification](docs/EXCEL.md).
-- [Power BI integration package](powerbi/README.md): aggregate CSVs, Power Query import function, relationships, DAX specifications and five-page layout. **No verified .pbix report.**
-
-Demonstration only: 10,000 customers, 40% margin, $0.05 delivery/customer, $500 setup, multiplier 1. Men's email net contribution $2,079.31 (conditional pointwise range $955.38–$3,229.10); women's $697.65 (−$323.86–$1,723.82). These are hypothetical scenarios, not observed profit or forecasts.
-
-Local suite: **70 passed**, zero failed/skipped. Python/SQL reconciliation covers 11 economic fields. Workbook reopened and recalculated in Artifact Tool and LibreOffice; native Microsoft Excel remains unverified. Hosted Session 3 CI passed 60 unit and 10 authentic integration tests. The live simulator, input changes and all three new downloads were verified in Chrome; see docs/QA.md.
-
-![Excel executive dashboard](screenshots/excel-business-dashboard.png)
-
-![Verified live economics simulator](screenshots/economics-simulator.png)
+Start with [project state](PROJECT_STATE.md), [session log](SESSION_LOG.md) and [maintenance guidance](NEXT_SESSION_PROMPT.md). The four-session portfolio scope is delivered with the native Excel/Power BI limitations stated above; optional future work must preserve existing validated findings.

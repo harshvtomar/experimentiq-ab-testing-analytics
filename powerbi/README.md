@@ -38,3 +38,6 @@ Scenario columns follow docs/ECONOMICS.md. `assumption_basis` is hypothetical. N
 - Totals for nonadditive contrasts/returns are blank; sensitivity axis selects one driver and one value per mark.
 
 References: https://learn.microsoft.com/en-us/dax/selectedvalue-function-dax ; https://learn.microsoft.com/en-us/dax/divide-function-dax ; https://learn.microsoft.com/en-us/power-bi/guidance/star-schema .
+
+## Final Session 4 audit
+`tests/test_final_audit.py` independently reconciles all eight exported fact tables to their canonical Python/report sources; existing package tests verify dimension keys and fact grains. Model relationship directions, nonadditive measure guards and null handling were reviewed. These checks validate the integration assets, not Power Query/DAX execution. No supported Windows Desktop session was available, so native PBIX creation and rendering remain explicitly unverified.

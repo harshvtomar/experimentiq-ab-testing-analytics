@@ -1,0 +1,55 @@
+{
+  "source_sha256": "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece",
+  "plan_sha256": "012c8a5941f479affcedbde709d0649157e3a7be66e72d3b4848779a212c3bf0",
+  "bootstrap_reps": 10000,
+  "seed": 20261020,
+  "runtime_seconds": 1.039,
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "statsmodels": "0.15.0"
+  },
+  "checks": {
+    "n": 64000,
+    "unique_trace_ids": 64000,
+    "assignment_counts": {
+      "Control": 21306,
+      "Men's email": 21307,
+      "Women's email": 21387
+    },
+    "srm": {
+      "counts": {
+        "Control": 21306,
+        "Men's email": 21307,
+        "Women's email": 21387
+      },
+      "expected_probabilities": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "allocation_basis": "Original challenge states one third randomly selected for each arm",
+      "srm_chi_square": 0.20253125000000002,
+      "srm_df": 2,
+      "srm_p_value": 0.9036929575604195,
+      "srm_flag_at_0_001": false,
+      "interpretation": "Preliminary allocation diagnostic only; no outcome significance test"
+    },
+    "max_absolute_baseline_smd": 0.016899120365944938,
+    "no_outcome_segmentation": true,
+    "original_randomization_logs_available": false
+  }
+}
+   outcome                      comparison   effect   ci_low  ci_high         p_raw    p_adjusted
+conversion       Men's email minus Control 0.006805 0.005014 0.008641  1.167425e-13  2.334851e-13
+conversion     Women's email minus Control 0.003111 0.001502 0.004745  1.649988e-04  1.649988e-04
+conversion Men's email minus Women's email 0.003694 0.001746 0.005663  2.327322e-04  4.654643e-04
+     visit       Men's email minus Control 0.076590 0.069953 0.083227 5.437359e-113 1.087472e-112
+     visit     Women's email minus Control 0.045233 0.038894 0.051574  2.300994e-44  2.300994e-44
+     visit Men's email minus Women's email 0.031356 0.024284 0.038428  3.794051e-18  1.138215e-17
+                     comparison   effect   ci_low  ci_high        p_raw   p_adjusted  drift_fraction_width
+      Men's email minus Control 0.769827 0.488844 1.057274 1.163815e-07 2.327630e-07              0.002822
+    Women's email minus Control 0.424412 0.169034 0.680954 1.129397e-03 1.129397e-03              0.006191
+Men's email minus Women's email 0.345415 0.029083 0.656923 3.046865e-02 3.046865e-02              0.011855

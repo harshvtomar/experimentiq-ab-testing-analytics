@@ -1,0 +1,6 @@
+{
+  "excel_recalculation_checks.json": "exact equality after full builder regeneration",
+  "excel_reopen_values.json": "exact equality after full builder regeneration",
+  "delivered_workbook_sha256": "5dbea525acb18d0d3d62ba6ef9279a53ec6f17c4900c95159ad4962b9eef32f4",
+  "native_excel_verified": false
+}

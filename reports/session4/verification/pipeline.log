@@ -1,0 +1,96 @@
+{
+  "quality": {
+    "rows": 64000,
+    "columns": [
+      "recency",
+      "history_segment",
+      "history",
+      "mens",
+      "womens",
+      "zip_code",
+      "newbie",
+      "channel",
+      "segment",
+      "visit",
+      "conversion",
+      "spend"
+    ],
+    "missing": {
+      "recency": 0,
+      "history_segment": 0,
+      "history": 0,
+      "mens": 0,
+      "womens": 0,
+      "zip_code": 0,
+      "newbie": 0,
+      "channel": 0,
+      "segment": 0,
+      "visit": 0,
+      "conversion": 0,
+      "spend": 0
+    },
+    "unexpected_categories": {
+      "segment": [],
+      "channel": [],
+      "zip_code": [],
+      "history_segment": []
+    },
+    "invalid_numeric_counts": {
+      "recency": 0,
+      "history": 0,
+      "mens": 0,
+      "womens": 0,
+      "newbie": 0,
+      "visit": 0,
+      "conversion": 0,
+      "spend": 0
+    },
+    "repeated_rows_after_first": 6562,
+    "duplicate_policy": "Retain all rows; no original customer identifier exists",
+    "cross_outcome_anomalies": {
+      "conversion_without_visit": 0,
+      "positive_spend_without_conversion": 0,
+      "conversion_without_positive_spend": 0
+    },
+    "errors": [],
+    "valid": true
+  },
+  "integrity": {
+    "counts": {
+      "Control": 21306,
+      "Men's email": 21307,
+      "Women's email": 21387
+    },
+    "expected_probabilities": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "allocation_basis": "Original challenge states one third randomly selected for each arm",
+    "srm_chi_square": 0.20253125000000002,
+    "srm_df": 2,
+    "srm_p_value": 0.9036929575604195,
+    "srm_flag_at_0_001": false,
+    "interpretation": "Preliminary allocation diagnostic only; no outcome significance test"
+  },
+  "reconciliation": {
+    "status": "passed",
+    "metrics": [
+      "n",
+      "conversions",
+      "visits",
+      "spend_cents",
+      "conversion_rate",
+      "visit_rate",
+      "total_spend",
+      "spend_per_customer"
+    ],
+    "tolerance": 1e-12
+  },
+  "provenance": {
+    "source_url": "http://www.minethatdata.com/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv",
+    "retrieved_at_utc": "2026-10-19T18:59:01.843018+00:00",
+    "sha256": "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece",
+    "bytes": 3964977
+  }
+}
