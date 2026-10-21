@@ -1,0 +1,13 @@
+statistic,df,p_raw,status,variable,treatment,reference,method,p_adjusted,family_size
+2.3225560079087852,2,0.3130858002023313,approximate additive interaction evaluated,channel,Men's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+3.388250245652126,2,0.18375992608719136,approximate additive interaction evaluated,channel,Women's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+1.1749750657006963,2,0.5557217648867914,approximate additive interaction evaluated,recency_band,Men's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+0.45634664080123505,2,0.7959862872168778,approximate additive interaction evaluated,recency_band,Women's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+5.233628639584809,1,0.02215426728051072,approximate additive interaction evaluated,historical_spend_band,Men's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,0.2215426728051072,12
+0.8318034285116789,1,0.36175156673710873,approximate additive interaction evaluated,historical_spend_band,Women's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+0.4164999500250801,1,0.518688688047923,approximate additive interaction evaluated,newbie,Men's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+6.954791108237096,1,0.008359505907323119,approximate additive interaction evaluated,newbie,Women's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,0.09195456498055431,12
+1.1585156578870621,1,0.2817735927401095,approximate additive interaction evaluated,mens,Men's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+4.8036334333952695,1,0.02839978220439485,approximate additive interaction evaluated,mens,Women's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,0.25559803983955365,12
+0.6125004645141674,1,0.43384789144405145,approximate additive interaction evaluated,womens,Men's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,1.0,12
+7.701200870374866,1,0.00551840989465565,approximate additive interaction evaluated,womens,Women's email,Control,inverse-variance additive risk-difference heterogeneity; exploratory,0.0662209187358678,12

@@ -1,0 +1,29 @@
+{
+  "assumption_basis": "hypothetical demonstration, not actual commercial inputs",
+  "assumptions": {
+    "audience": 10000,
+    "margin": 0.4,
+    "delivery_cost": 0.05,
+    "fixed_cost": 500.0,
+    "multiplier": 1.0
+  },
+  "source_sha256": "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece",
+  "revenue_export_sha256": "525b6c4128a6fd1c097a6257219728aee06e1ae8ed8dc029a28fe786155bc54f",
+  "sql_reconciliation": {
+    "status": "passed",
+    "fields": [
+      "revenue",
+      "gross_contribution",
+      "variable_cost",
+      "total_cost",
+      "net_value",
+      "net_low",
+      "net_high",
+      "break_even_uplift",
+      "break_even_margin",
+      "max_delivery_cost",
+      "net_return_on_cost"
+    ],
+    "absolute_tolerance": 1e-09
+  }
+}

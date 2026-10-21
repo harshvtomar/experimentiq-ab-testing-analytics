@@ -1,7 +1,7 @@
 # ExperimentIQ
 ### A/B Testing & Incremental Revenue Optimization
 
-A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Session 2 delivered and live-verified**: binary-outcome inference, declared Holm families, 10,000-replication customer bootstrap, exploratory subgroup interactions and eight interactive Streamlit pages. Hosted verification is recorded in docs/QA.md.
+A reproducible retail experimentation analytics case study built on Kevin Hillstrom's authentic 64,000-customer randomized email experiment. **Sessions 1–2 delivered and live-verified**: binary-outcome inference, declared Holm families, 10,000-replication customer bootstrap, exploratory subgroup interactions and eight interactive Streamlit pages. Hosted verification is recorded in docs/QA.md.
 
 ## Business question
 Which merchandise email, if any, should a retailer consider deploying to improve purchasing and revenue? Conversion is primary; website visits and two-week spend per assigned customer are secondary. All three experimental arms remain distinct.
@@ -24,6 +24,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m src.pipeline
 python -m src.statistical_pipeline
+python -m src.business_pipeline
 EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q
 python -m streamlit run app.py
 ```
@@ -90,3 +91,17 @@ All eight pages opened on the existing live app. Outcome selection, bootstrap co
 ![Verified live statistical significance page, visit endpoint](screenshots/statistical-significance.png)
 
 Continue with [the Session 3 prompt](NEXT_SESSION_PROMPT.md) for explicit economics assumptions, Excel reporting and supported Power BI integration.
+
+## Session 3 business economics
+The ninth page, **Business Economics & ROI Simulator**, uses editable, explicitly hypothetical audience, contribution margin, delivery cost, fixed setup cost and effect multiplier. It starts without an economic conclusion until assumptions are enabled. Treatment/control comparisons, affine uncertainty intervals, break-even thresholds, three sensitivity charts and CSV exports share `src/economics.py`. All original eight pages remain.
+
+- [Editable seven-sheet Excel workbook](reports/session3/ExperimentIQ_Business_Analytics_Report.xlsx): real formulas, three charts, tested recalculation and source evidence.
+- [Executive business report](reports/session3/EXECUTIVE_BUSINESS_REPORT.md): statistical evidence, magnitude and conditional economic decision.
+- [Economics formulas](docs/ECONOMICS.md) and [Excel reproduction/verification](docs/EXCEL.md).
+- [Power BI integration package](powerbi/README.md): aggregate CSVs, Power Query import function, relationships, DAX specifications and five-page layout. **No verified .pbix report.**
+
+Demonstration only: 10,000 customers, 40% margin, $0.05 delivery/customer, $500 setup, multiplier 1. Men's email net contribution $2,079.31 (conditional pointwise range $955.38–$3,229.10); women's $697.65 (−$323.86–$1,723.82). These are hypothetical scenarios, not observed profit or forecasts.
+
+Local suite: **70 passed**, zero failed/skipped. Python/SQL reconciliation covers 11 economic fields. Workbook reopened and recalculated in Artifact Tool and LibreOffice; native Microsoft Excel remains unverified. Hosted Session 3 CI/live checks will be recorded in docs/QA.md after publication.
+
+![Excel executive dashboard](screenshots/excel-business-dashboard.png)

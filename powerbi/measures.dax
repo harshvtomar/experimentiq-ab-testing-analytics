@@ -1,0 +1,40 @@
+// Specification: add each measure separately. Not executed in Power BI Desktop.
+Assigned Customers = SUM(arm_performance[n])
+
+Conversions = SUM(arm_performance[conversions])
+
+Visitors = SUM(arm_performance[visits])
+
+Observed Spend = SUM(arm_performance[total_spend])
+
+Conversion Rate = DIVIDE([Conversions], [Assigned Customers])
+
+Visit Rate = DIVIDE([Visitors], [Assigned Customers])
+
+Spend per Customer = DIVIDE([Observed Spend], [Assigned Customers])
+
+// Row-count guard prevents totals or repeated common values from masking multiple contrasts.
+Binary Difference pp = IF(COUNTROWS(binary_inference)=1, 100*SELECTEDVALUE(binary_inference[effect]))
+
+Binary Lower pp = IF(COUNTROWS(binary_inference)=1, 100*SELECTEDVALUE(binary_inference[ci_low]))
+
+Binary Upper pp = IF(COUNTROWS(binary_inference)=1, 100*SELECTEDVALUE(binary_inference[ci_high]))
+
+Binary Holm p = IF(COUNTROWS(binary_inference)=1, SELECTEDVALUE(binary_inference[p_adjusted]))
+
+Revenue Difference = IF(COUNTROWS(revenue_inference)=1, SELECTEDVALUE(revenue_inference[effect]))
+
+Revenue Lower = IF(COUNTROWS(revenue_inference)=1, SELECTEDVALUE(revenue_inference[ci_low]))
+
+Revenue Upper = IF(COUNTROWS(revenue_inference)=1, SELECTEDVALUE(revenue_inference[ci_high]))
+
+Scenario Net Contribution = IF(COUNTROWS(scenario_snapshot)=1, SELECTEDVALUE(scenario_snapshot[net_value]))
+
+Scenario Net Return = IF(COUNTROWS(scenario_snapshot)=1,
+    DIVIDE(SELECTEDVALUE(scenario_snapshot[net_value]),SELECTEDVALUE(scenario_snapshot[total_cost])))
+
+Sensitivity Net = IF(COUNTROWS(sensitivity_snapshot)=1, SELECTEDVALUE(sensitivity_snapshot[net_value]))
+
+Subgroup Effect pp = IF(COUNTROWS(segment_effects)=1,100*SELECTEDVALUE(segment_effects[effect]))
+
+Interaction Holm p = IF(COUNTROWS(interactions)=1,SELECTEDVALUE(interactions[p_adjusted]))

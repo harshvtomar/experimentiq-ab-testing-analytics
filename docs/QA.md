@@ -38,3 +38,14 @@ Synthetic rows exist only in tests/conftest.py and never feed project findings. 
 - Saved actual browser screenshot as screenshots/statistical-significance.png. Visual inspection identified numeric intermediate ticks for binary subgroup levels; set forest y-axis to categorical. This is a presentation change only, with no altered calculations.
 
 - Final local verification after categorical-axis fix: `EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q --junitxml=reports/test-results.xml` — **46 passed in 11.55s**, zero failures/skips.
+
+# Session 3 — 2026-10-21
+- Inspected remote main at 4afa95e77d4ead1275b696a566b6d350d91f8f8f and read prior checkpoints, methods, source modules, tests and analytical outputs.
+- Original pipeline passed. Statistical pipeline initially could not find statsmodels package metadata after runtime restoration; restored the existing pinned requirements, then inference completed. Baseline: **46 passed in 12.24s**. No source/statistical methods changed.
+- Added canonical economics, independent SQL arithmetic, sensitivity, ninth dashboard page and business exports. First targeted economics/UI run: **20 passed in 4.07s**, with six pandas concat deprecation warnings. Changed sensitivity assembly to records, resolving the warnings.
+- First complete workbook suite: 66 passed, 2 failed. One test assumed a chart ZIP path; corrected it to the actual valid OOXML chart location. Boundary recalculation exposed an authoring-engine zero/blank comparison issue; replaced blank equality with ISNUMBER to preserve zero. Both workbook tests passed after correction.
+- Final local command `EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q --junitxml=reports/test-results.xml`: **70 passed in 15.20s**, zero failures/skips/warnings. All original eight pages and the ninth simulator are covered through AppTest.
+- Workbook: seven sheets/three bound charts; actual changed-input, zero/missing/invalid cases recalculated; exported/reopened; all seven rendered previews inspected. Source p-values retain full float serialization. Hash manifest binds builder, input JSON, workbook and recalculation evidence.
+- LibreOfficeDev 26.8 headless opened/recalculated a disposable workbook copy. Net/interval values matched and worksheet error-cell scan found zero errors. Native Microsoft Excel was not run.
+- Power BI data grains/keys and source-value equivalence tested. Linux environment has no Power BI Desktop; no .pbix or executed DAX claim.
+- Session 3 implementation publication and hosted verification follow this checkpoint.

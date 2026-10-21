@@ -19,9 +19,9 @@ def load_data():
 
 st.sidebar.title('ExperimentIQ')
 st.sidebar.caption('A/B Testing & Incremental Revenue Optimization')
-page=st.sidebar.radio('Workspace',['Executive Overview','Treatment Comparison','Customer Segment Explorer','Data Quality & Methodology','Statistical Significance','Revenue Uplift Analysis','Segment Effect Explorer','Business Recommendations'])
+page=st.sidebar.radio('Workspace',['Executive Overview','Treatment Comparison','Customer Segment Explorer','Data Quality & Methodology','Statistical Significance','Revenue Uplift Analysis','Segment Effect Explorer','Business Recommendations','Business Economics & ROI Simulator'])
 st.sidebar.divider()
-st.sidebar.caption('SESSION 2 · STATISTICAL ANALYSIS — Authentic 2008 randomized email experiment. Two-week outcomes.')
+st.sidebar.caption('SESSION 3 · BUSINESS ECONOMICS — Authentic 2008 experiment. Two-week outcomes; commercial scenarios are hypothetical.')
 st.title('Experiment Performance Intelligence')
 st.caption('ExperimentIQ  /  '+page)
 st.info('Descriptive pages show observed outcomes. Statistical pages add uncertainty and family-specific Holm adjustments. Revenue is not profit; modern rollout needs cost evidence and replication.')
@@ -103,6 +103,9 @@ elif page=='Data Quality & Methodology':
         export(table,'Download baseline balance','baseline_balance')
     st.download_button('Download quality report',json.dumps(quality,indent=2),'quality.json','application/json')
 
+elif page=='Business Economics & ROI Simulator':
+    from src.economics_ui import render
+    render(df)
 else:
     from src.statistical_ui import render
     render(page,df)

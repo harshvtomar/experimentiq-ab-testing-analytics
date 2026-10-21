@@ -1,0 +1,11 @@
+{
+  "engine": "Artifact Tool",
+  "native_microsoft_excel_verified": false,
+  "hashes": {
+    "ExperimentIQ_Business_Analytics_Report.xlsx": "5dbea525acb18d0d3d62ba6ef9279a53ec6f17c4900c95159ad4962b9eef32f4",
+    "workbook_inputs.json": "fbf71fd00d64098c2d40a3c25401af596c3413dbb27a1963fd37a4767605826e",
+    "excel_recalculation_checks.json": "24cbae99e8a3dd65fb6a350522abefc6d7467c3c5e66e8e65841499598df24b2",
+    "excel_reopen_values.json": "0e88eb486093563b75acf849d77e12df9c6776bc307cfa3f19ee8f0aab4d75af",
+    "scripts/build_workbook.mjs": "50b3f8c669b6c52b7d6dd78539ad1f8c3d5a297de6c7d84b259a29b4b7187e28"
+  }
+}

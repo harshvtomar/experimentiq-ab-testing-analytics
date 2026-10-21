@@ -8,3 +8,5 @@ data/processed/
 .streamlit/secrets.toml
 reports/test-results.xml
 reports-run.log
+reports/session3/previews/
+reports/session3/*.inspect.ndjson

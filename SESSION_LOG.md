@@ -33,3 +33,11 @@
 - NEXT_SESSION_PROMPT.md now continues Session 3 economics, Excel and technically supported Power BI work, preserving established statistical evidence and uncertainty. No costs, margins or profit claims invented.
 
 - Final local verification after categorical-axis fix: `EXPERIMENTIQ_REQUIRE_DATA=1 python -m pytest -q --junitxml=reports/test-results.xml` — **46 passed in 11.55s**, zero failures/skips.
+
+## Session 3 — 2026-10-21
+- Preserved main at 4afa95e; reread all prior methods/checkpoints and reran original pipelines/46 tests after restoring pinned runtime dependencies.
+- Added explicit hypothetical economics, zero/missing/invalid safeguards, affine interval transformation, incremental control baseline, break-even formulas and SQL reconciliation.
+- Added ninth Streamlit page and three new downloads; existing eight pages remain. Generated aggregate business report, Excel inputs, Power BI import assets.
+- Built seven-sheet Excel workbook using Artifact Tool with editable formulas and three native charts. Boundary tests caught/fixed zero-versus-blank handling. Seven renders inspected; reopened workbook and LibreOffice recalculation checked. Microsoft Excel and Power BI Desktop remain unverified.
+- Full local suite: 70 passed in 15.20s, no failures/skips. Power BI package has explicit unexecuted DAX/native-report limitations.
+- Updated Session 4 prompt and documentation; remote/hosted verification recorded after publication.
